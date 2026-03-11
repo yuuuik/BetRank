@@ -30,7 +30,7 @@ export default function ProviderPage({ params }: Props) {
   const providerGames = games.filter(g => g.providerSlug === params.slug)
 
   // Казино где есть игры этого провайдера (объединяем все casinoSlugs)
-  const allCasinoSlugs = [...new Set(providerGames.flatMap(g => g.casinoSlugs))]
+  const allCasinoSlugs = Array.from(new Set(providerGames.flatMap(g => g.casinoSlugs)))
   const providerCasinos = services.filter(s => allCasinoSlugs.includes(s.slug))
     .sort((a, b) => b.rating - a.rating)
 
