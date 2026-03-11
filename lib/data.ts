@@ -35,7 +35,7 @@ export const services: Service[] = [
     description: '1Win — 500% суммарно до 200 000 ₽ на первые 4 депозита. Казино + спорт, Авиатор, 1Win Games.',
     fullDescription: `1Win основан в 2016 году. Пакет на 4 депозита: 200%+150%+100%+50%, суммарно до 200 000 ₽ (до 50 000 ₽ на каждый). Казино с тысячами слотов, Авиатор, уникальные быстрые игры 1Win Games.`,
     rating: 4.5, userRating: 4.3, reviewCount: 12350, type: 'both', founded: 2016,
-    license: 'Curaçao eGaming (8048/JAZ)', website: 'https://1win.com',
+    license: 'Curaçao eGaming (8048/JAZ)', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: '500% до 200 000 ₽ на 4 депозита',
     bonuses: [
       { type: 'deposit', title: 'Мегапакет', description: '200%+150%+100%+50% на первые 4 депозита', amount: 'до 200 000 ₽', wagering: 'ординар кф 3.0+, 5% за выигрыш', validDays: 30 },
