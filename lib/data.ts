@@ -8,7 +8,7 @@ export const services: Service[] = [
     description: '1xBet — один из крупнейших букмекеров мира: 40+ видов спорта, 1000+ live-событий и огромное казино. Бонус 100% до 32 500 ₽.',
     fullDescription: `1xBet основан в 2007 году. Один из крупнейших операторов мира по количеству событий и вариантов ставок. 40+ видов спорта, 1000+ live-событий с трансляциями, тысячи слотов в казино.\n\nПриветственный пакет: 100% до 32 500 ₽ на спорт + казино-пакет до €1950 + 150 фриспинов за первые депозиты.`,
     rating: 4.6, userRating: 4.4, reviewCount: 18420, type: 'both', founded: 2007,
-    license: 'Curaçao eGaming (1668/JAZ)', website: 'https://1xbet.com',
+    license: 'Curaçao eGaming (1668/JAZ)', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: '100% до 32 500 ₽ + €1950 в казино',
     bonuses: [
       { type: 'deposit', title: 'Бонус на спорт', description: '100% на первый депозит', amount: '100% до 32 500 ₽', wagering: '5x экспресс (3+ события кф 1.4+)', validDays: 30 },
@@ -61,7 +61,7 @@ export const services: Service[] = [
     description: 'Fonbet работает с 1994 года. Лицензия ФНС. Бездепозитный фрибет до 15 000 ₽ за регистрацию, лучшие коэффициенты на РПЛ и КХЛ.',
     fullDescription: `Fonbet — старейший и крупнейший легальный букмекер России с 1994 года. Лицензия ФНС, член СРО. Бездепозитный фрибет до 15 000 ₽ — просто за верификацию. Лучшие коэффициенты на РПЛ, КХЛ. Live 500+ событий с трансляциями. Кэшбек 20% на киберспорт.`,
     rating: 4.5, userRating: 4.4, reviewCount: 21300, type: 'betting', founded: 1994,
-    license: 'Российская лицензия ФНС, член СРО', website: 'https://fonbet.ru',
+    license: 'Российская лицензия ФНС, член СРО', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'Фрибет до 15 000 ₽ без депозита',
     bonuses: [
       { type: 'registration', title: 'Бездепозитный фрибет', description: 'Фрибет за регистрацию и верификацию', amount: 'до 15 000 ₽', wagering: '1x (ординар кф до 3.0)', validDays: 30 },
@@ -87,7 +87,7 @@ export const services: Service[] = [
     description: 'Winline — официальный российский букмекер. Фрибет 3 000 ₽ за депозит от 500 ₽. Программа Priority с ежедневными бонусами и кэшбеком до 100%.',
     fullDescription: `Winline работает с 2009 года, лицензия ФНС. Гарантированный фрибет 3 000 ₽ за депозит от 500 ₽. Программа Priority: ежедневные бонусы, кэшбек до 100%, ежемесячный фрибет до 50 000 ₽.`,
     rating: 4.4, userRating: 4.3, reviewCount: 15780, type: 'betting', founded: 2009,
-    license: 'Российская лицензия ФНС, член СРО', website: 'https://winline.ru',
+    license: 'Российская лицензия ФНС, член СРО', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'Фрибет 3 000 ₽ за регистрацию',
     bonuses: [
       { type: 'registration', title: 'Приветственный фрибет', description: '3 000 ₽ за депозит от 500 ₽', amount: '3 000 ₽', wagering: '1x кф от 1.3', validDays: 30 },
@@ -114,7 +114,7 @@ export const services: Service[] = [
     description: 'MostBet — 125% до 25 000 ₽ + 250 фриспинов. Программа лояльности 10 уровней, реферальная программа 15%.',
     fullDescription: `MostBet работает с 2009 года. Приветственный бонус 125% до 25 000 ₽ + 250 FS. Бонусы на 4 первых депозита. 10-уровневая программа лояльности. Реферальная программа до 15%.`,
     rating: 4.4, userRating: 4.2, reviewCount: 9870, type: 'both', founded: 2009,
-    license: 'Curaçao eGaming', website: 'https://mostbet.com',
+    license: 'Curaçao eGaming', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: '125% до 25 000 ₽ + 250 FS',
     bonuses: [
       { type: 'deposit', title: 'Приветственный бонус', description: '125% + 250 FS', amount: '125% до 25 000 ₽', wagering: '5x спорт / 60x казино', validDays: 30 },
@@ -133,7 +133,7 @@ export const services: Service[] = [
     description: 'Бетсити — один из лидеров легального рынка РФ. Бонус до 200% за первый депозит по промокоду 200BONUS. Лицензия ФНС.',
     fullDescription: `Бетсити — крупный российский легальный букмекер с лицензией ФНС. По промокоду 200BONUS при регистрации доступен бонус до 200% на первый депозит. Акция действует до 31 декабря 2026 года. Широкая линия, Live с трансляциями, сильная киберспортивная линия.`,
     rating: 4.4, userRating: 4.2, reviewCount: 13500, type: 'betting', founded: 2003,
-    license: 'Российская лицензия ФНС, член СРО', website: 'https://betcity.ru',
+    license: 'Российская лицензия ФНС, член СРО', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'До 200% за первый депозит',
     bonuses: [
       { type: 'deposit', title: 'Бонусный плей-офф', description: 'До 200% за первый депозит по промокоду 200BONUS', amount: 'до 200%', wagering: '5x', validDays: 30 },
@@ -155,7 +155,7 @@ export const services: Service[] = [
     description: 'Leon — топовый легальный букмекер. Фрибет до 25 000 ₽ за регистрацию. Лучший в России по линии киберспорта, низкая маржа 5–7%.',
     fullDescription: `Леон работает с 2007 года, лицензия ФНС. Приветственный фрибет до 25 000 ₽ за первую проигравшую ставку с промокодом STRAHOVKA. Программа лояльности Leon Family с кэшбеком до 15%. Уникальный раздел «Киберфутбол» с 4 лигами. Минимальная маржа 5–7% на топовые события.`,
     rating: 4.5, userRating: 4.3, reviewCount: 11200, type: 'betting', founded: 2007,
-    license: 'Российская лицензия ФНС, член СРО', website: 'https://leon.ru',
+    license: 'Российская лицензия ФНС, член СРО', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'Фрибет до 25 000 ₽',
     bonuses: [
       { type: 'registration', title: 'Приветственный фрибет', description: 'Фрибет до 25 000 ₽ за первую проигрышную ставку', amount: 'до 25 000 ₽', wagering: '1x кф от 1.7', validDays: 30 },
@@ -178,7 +178,7 @@ export const services: Service[] = [
     description: 'BetBoom (ранее BingoBoom) — легальный букмекер с лицензией ФНС. Фрибет 10 000 ₽ за регистрацию. Лидер по кибеспорту и маркетинговым акциям 2026 года.',
     fullDescription: `BetBoom (BingoBoom) — один из самых быстрорастущих легальных букмекеров России 2026 года. Агрессивная маркетинговая политика и акцент на киберспортивной линии. Приветственный фрибет 10 000 ₽ за регистрацию. Широкая линия по CS2, Dota 2, LoL, Valorant.`,
     rating: 4.3, userRating: 4.2, reviewCount: 8900, type: 'betting', founded: 2010,
-    license: 'Российская лицензия ФНС, член СРО', website: 'https://betboom.ru',
+    license: 'Российская лицензия ФНС, член СРО', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'Фрибет 10 000 ₽',
     bonuses: [
       { type: 'registration', title: 'Фрибет за регистрацию', description: 'Фрибет 10 000 ₽ новым игрокам', amount: '10 000 ₽', wagering: '1x', validDays: 30 },
@@ -200,7 +200,7 @@ export const services: Service[] = [
     description: 'OlimpBet — легальный букмекер, работающий с 2004 года. Фрибет до 15 000 ₽ за первый депозит по промокоду TGBONUS. Программа лояльности с кэшбеком до 20%.',
     fullDescription: `OlimpBet (Олимп) работает с 2004 года, лицензия ФНС с 2012 года. Приветственный фрибет: 50% от суммы первого депозита от 1 000 ₽ — до 15 000 ₽ по промокоду TGBONUS. Программа лояльности с кэшбеком до 20%, удвоение коэффициента экспресса.`,
     rating: 4.2, userRating: 4.1, reviewCount: 7600, type: 'betting', founded: 2004,
-    license: 'Российская лицензия ФНС, член СРО', website: 'https://olimpbet.ru',
+    license: 'Российская лицензия ФНС, член СРО', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'Фрибет до 15 000 ₽',
     bonuses: [
       { type: 'deposit', title: 'Приветственный фрибет', description: '50% от первого депозита', amount: 'до 15 000 ₽', wagering: '1x', validDays: 7 },
@@ -223,7 +223,7 @@ export const services: Service[] = [
     description: 'PARI (экс-Parimatch, ребрендинг 2026) — легальный букмекер с 1994 года. 5 фрибетов по 1 000 ₽ или до 20 000 ₽ по промокоду SPORTS20. Лучшая линия на теннис.',
     fullDescription: `PARI (ранее Parimatch) работает с 1994 года, лицензия ФНС. Ребрендинг в марте 2026 года. Для новых игроков: 5 фрибетов по 1 000 ₽ или по промокоду LUXURY — 9 999 ₽, по промокоду SPORTS20 — 100% до 20 000 ₽. Лучшие коэффициенты на теннис, UFC. Live 800+ событий.`,
     rating: 4.3, userRating: 4.2, reviewCount: 11200, type: 'betting', founded: 1994,
-    license: 'Российская лицензия ФНС, член СРО', website: 'https://pari.ru',
+    license: 'Российская лицензия ФНС, член СРО', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: '5 фрибетов по 1 000 ₽',
     bonuses: [
       { type: 'freespins', title: '5 фрибетов', description: 'Пять фрибетов по 1 000 ₽ за депозит и ставки', amount: '5 × 1 000 ₽', wagering: '1x', validDays: 30 },
@@ -246,7 +246,7 @@ export const services: Service[] = [
     description: 'MelBet — 50+ видов спорта, бонус до 35 000 ₽ по промокоду. VIP-кэшбек до 20%, Гранд Экспресс.',
     fullDescription: `MelBet работает с 2012 года. По промокоду LEGALBET — 100% до 35 000 ₽ на первый депозит. VIP-кэшбек до 20% ежемесячно. Гранд Экспресс — повышение итогового коэффициента. Еженедельный джекпот до 50 000 ₽. Казино с тысячами игр.`,
     rating: 4.3, userRating: 4.1, reviewCount: 8940, type: 'both', founded: 2012,
-    license: 'Curaçao eGaming', website: 'https://melbet.com',
+    license: 'Curaçao eGaming', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: '100% до 35 000 ₽ по промокоду',
     bonuses: [
       { type: 'deposit', title: 'Приветственный бонус', description: '100% по промокоду LEGALBET', amount: '100% до 35 000 ₽', wagering: 'x25 кф 1.5+', validDays: 30 },
@@ -269,7 +269,7 @@ export const services: Service[] = [
     description: 'Марафон — старейший легальный букмекер с 1997 года. Фрибет до 21 500 ₽ за экспресс-ставки. VIP-клуб с персональными бонусами для крупных игроков.',
     fullDescription: `Марафон (Marathon) работает с 1997 года, лицензия ФНС. Фрибет до 21 500 ₽ за экспресс-ставки новым игрокам. Фрибет 11 111 ₽ за регистрацию через приложение и ставки. Фрибет 5 000 ₽ за первый депозит в мобильном приложении. VIP-клуб для крупных игроков с персональными предложениями.`,
     rating: 4.2, userRating: 4.0, reviewCount: 9300, type: 'betting', founded: 1997,
-    license: 'Российская лицензия ФНС, член СРО', website: 'https://marathonbet.ru',
+    license: 'Российская лицензия ФНС, член СРО', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'Фрибет до 21 500 ₽',
     bonuses: [
       { type: 'registration', title: 'Фрибет за экспрессы', description: 'До 21 500 ₽ за экспресс-ставки новым игрокам', amount: 'до 21 500 ₽', wagering: '1x', validDays: 30 },
@@ -292,7 +292,7 @@ export const services: Service[] = [
     description: 'Лига Ставок — старейший легальный букмекер. Фрибет 7 777 ₽ за регистрацию. Страховка экспресса до 18 000 000 ₽. Офисы по всей России.',
     fullDescription: `Лига Ставок работает с 2008 года, лицензия ФНС. Приветственный фрибет 7 777 ₽ за регистрацию. Уникальная акция «Страховка экспресса» — до 18 000 000 ₽ при ставке от 6 событий. Акция «0:0 в вашу пользу» — возврат при нулевой ничьей. Розыгрыш 30 000 ₽ за оборот 1 000 000 ₽.`,
     rating: 4.2, userRating: 4.1, reviewCount: 12400, type: 'betting', founded: 2008,
-    license: 'Российская лицензия ФНС, член СРО', website: 'https://ligastavok.ru',
+    license: 'Российская лицензия ФНС, член СРО', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'Фрибет 7 777 ₽',
     bonuses: [
       { type: 'registration', title: 'Фрибет за регистрацию', description: 'Фрибет 7 777 ₽ за регистрацию', amount: '7 777 ₽', wagering: '1x кф от 1.5', validDays: 30 },
@@ -315,7 +315,7 @@ export const services: Service[] = [
     description: 'Tennisi — легальный букмекер с уникальным бессрочным бонусом при депозите от 50 ₽. Специализация на теннисе и теннисных трансляциях.',
     fullDescription: `Tennisi (Тенниси) — легальный букмекер с уникальным бессрочным бонусом: минимальный депозит всего 50 ₽. Специализация на теннисе — лучшая роспись на ATP, WTA, ITF. VIP-кэшбек для игроков с оборотом от 1 000 000 ₽. Бонус до 20 000 ₽ на три первых депозита по промокоду VBRSPORT.`,
     rating: 4.1, userRating: 4.0, reviewCount: 5400, type: 'betting', founded: 2014,
-    license: 'Российская лицензия ФНС, член СРО', website: 'https://tennisi.com',
+    license: 'Российская лицензия ФНС, член СРО', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'Бессрочный бонус + до 20 000 ₽',
     bonuses: [
       { type: 'registration', title: 'Бессрочный бонус', description: 'Уникальный бессрочный бонус при депозите от 50 ₽', amount: 'бессрочно', wagering: '1x', validDays: 0 },
@@ -338,7 +338,7 @@ export const services: Service[] = [
     description: 'БалтБет — легальный букмекер с 1994 года. Фрибет 8 000 ₽ за регистрацию. 9 акций для постоянных игроков, розыгрыши призов.',
     fullDescription: `БалтБет работает с 1994 года, лицензия ФНС. Один из старейших букмекеров России. Приветственный фрибет 8 000 ₽ за регистрацию. 9 бонусных акций для постоянных игроков включая розыгрыши призов, фрибеты за ставки на олимпийские виды спорта. VIP-кэшбек до 8%.`,
     rating: 4.1, userRating: 4.0, reviewCount: 6700, type: 'betting', founded: 1994,
-    license: 'Российская лицензия ФНС, член СРО', website: 'https://baltbet.ru',
+    license: 'Российская лицензия ФНС, член СРО', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'Фрибет 8 000 ₽',
     bonuses: [
       { type: 'registration', title: 'Приветственный фрибет', description: 'Фрибет 8 000 ₽ за регистрацию', amount: '8 000 ₽', wagering: '1x', validDays: 30 },
@@ -361,7 +361,7 @@ export const services: Service[] = [
     description: 'Зенит — легальный букмекер с одним из крупнейших приветственных фрибетов в России — 35 000 ₽. Лицензия ФНС, качественная live-линия.',
     fullDescription: `БК Зенит — официальный легальный букмекер с лицензией ФНС. Предлагает один из крупнейших приветственных фрибетов в России — 35 000 ₽ за регистрацию и первые ставки. Качественная live-линия, хорошая роспись на футбол и хоккей.`,
     rating: 4.1, userRating: 4.0, reviewCount: 5200, type: 'betting', founded: 2007,
-    license: 'Российская лицензия ФНС, член СРО', website: 'https://zenit.bet',
+    license: 'Российская лицензия ФНС, член СРО', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'Фрибет 35 000 ₽',
     bonuses: [
       { type: 'registration', title: 'Приветственный фрибет', description: 'Фрибет 35 000 ₽ за регистрацию', amount: '35 000 ₽', wagering: '1x', validDays: 30 },
@@ -383,7 +383,7 @@ export const services: Service[] = [
     description: 'Bettery — один из новых легальных букмекеров России с лицензией ФНС. Современный интерфейс, удобное приложение, конкурентные коэффициенты.',
     fullDescription: `Bettery — один из новых игроков на легальном российском рынке. Лицензия ФНС. Современный дизайн платформы, удобное приложение для iOS и Android. Конкурентные коэффициенты, растущая линия событий.`,
     rating: 4.0, userRating: 3.9, reviewCount: 2800, type: 'betting', founded: 2020,
-    license: 'Российская лицензия ФНС, член СРО', website: 'https://bettery.ru',
+    license: 'Российская лицензия ФНС, член СРО', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'Приветственный фрибет',
     bonuses: [
       { type: 'registration', title: 'Приветственный фрибет', description: 'Фрибет новым игрокам за регистрацию', amount: 'уточняйте на сайте', wagering: '1x', validDays: 30 },
@@ -405,7 +405,7 @@ export const services: Service[] = [
     description: 'СпортБет — легальный российский букмекер с лицензией ФНС. Широкая линия на спортивные события, удобный интерфейс.',
     fullDescription: `СпортБет — легальная букмекерская контора с лицензией ФНС России. Специализация на спортивных ставках, хорошая роспись на футбол, хоккей, баскетбол. Приложения для iOS и Android.`,
     rating: 4.0, userRating: 3.9, reviewCount: 3200, type: 'betting', founded: 2015,
-    license: 'Российская лицензия ФНС, член СРО', website: 'https://sportbet.ru',
+    license: 'Российская лицензия ФНС, член СРО', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'Приветственный бонус',
     bonuses: [
       { type: 'registration', title: 'Приветственный бонус', description: 'Бонус новым игрокам за регистрацию', amount: 'уточняйте на сайте', wagering: '1x', validDays: 30 },
@@ -427,7 +427,7 @@ export const services: Service[] = [
     description: '1хСтавка — легальная версия 1xBet для российского рынка с лицензией ФНС. Широкая линия, Live с трансляциями, приветственный бонус.',
     fullDescription: `1хСтавка — официальная российская компания группы 1xBet, работающая по лицензии ФНС. Обеспечивает доступ к широкой линии и live-ставкам на законных основаниях в России. Все функции 1xBet доступны в легальном формате.`,
     rating: 4.2, userRating: 4.0, reviewCount: 8700, type: 'betting', founded: 2016,
-    license: 'Российская лицензия ФНС, член СРО', website: 'https://1xstavka.ru',
+    license: 'Российская лицензия ФНС, член СРО', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'Приветственный фрибет',
     bonuses: [
       { type: 'registration', title: 'Приветственный фрибет', description: 'Фрибет за регистрацию и первую ставку', amount: 'уточняйте на сайте', wagering: '1x', validDays: 30 },
@@ -449,7 +449,7 @@ export const services: Service[] = [
     description: 'Бет-М — один из новейших легальных букмекеров России с лицензией ФНС. Современная платформа, конкурентные условия.',
     fullDescription: `Бет-М (Bet-M) — один из новых участников легального российского рынка букмекерских услуг. Получил лицензию ФНС и активно развивает платформу. Современный интерфейс, мобильное приложение для iOS и Android.`,
     rating: 3.9, userRating: 3.8, reviewCount: 1200, type: 'betting', founded: 2022,
-    license: 'Российская лицензия ФНС, член СРО', website: 'https://bet-m.ru',
+    license: 'Российская лицензия ФНС, член СРО', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'Приветственный бонус',
     bonuses: [
       { type: 'registration', title: 'Приветственный бонус', description: 'Бонус новым игрокам', amount: 'уточняйте на сайте', wagering: '1x', validDays: 30 },
@@ -473,7 +473,7 @@ export const services: Service[] = [
     description: 'Вулкан — одно из самых известных онлайн-казино в России. Приветственный пакет до 150 000 ₽ + фриспины. Тысячи слотов, live-казино.',
     fullDescription: `Вулкан — легендарный бренд российского онлайн-гемблинга. Приветственный пакет до 150 000 ₽ на первые депозиты + до 200 фриспинов. Тысячи слотов от ведущих провайдеров, live-казино с реальными дилерами, быстрые игры.`,
     rating: 4.2, userRating: 4.0, reviewCount: 22000, type: 'casino', founded: 2009,
-    license: 'Curaçao eGaming', website: 'https://vulkan-russia.com',
+    license: 'Curaçao eGaming', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'До 150 000 ₽ + 200 фриспинов',
     bonuses: [
       { type: 'deposit', title: 'Приветственный пакет', description: 'До 150 000 ₽ + 200 фриспинов за первые депозиты', amount: '150 000 ₽ + 200 FS', wagering: '40x', validDays: 30 },
@@ -496,7 +496,7 @@ export const services: Service[] = [
     description: 'JoyCasino — международное казино с бонусом 100% до 50 000 ₽ + 100 фриспинов. Live-казино, лотереи, программа лояльности.',
     fullDescription: `JoyCasino работает с 2014 года по лицензии Curaçao. Приветственный бонус 100% до 50 000 ₽ + 100 фриспинов. Тысячи слотов от NetEnt, Microgaming, Play'n GO. Live-казино с реальными дилерами, лотереи, виртуальный спорт.`,
     rating: 4.1, userRating: 4.0, reviewCount: 11300, type: 'casino', founded: 2014,
-    license: 'Curaçao eGaming', website: 'https://joycasino.com',
+    license: 'Curaçao eGaming', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: '100% до 50 000 ₽ + 100 FS',
     bonuses: [
       { type: 'deposit', title: 'Приветственный бонус', description: '100% до 50 000 ₽ + 100 фриспинов', amount: '100% до 50 000 ₽', wagering: '45x', validDays: 30 },
@@ -518,7 +518,7 @@ export const services: Service[] = [
     description: 'Frank Casino — элитное онлайн-казино с бонусом 150% до 100 000 ₽. Эксклюзивные провайдеры, высокие лимиты, VIP-программа.',
     fullDescription: `Frank Casino работает с 2014 года по лицензии Curaçao. Приветственный бонус 150% до 100 000 ₽ + 250 фриспинов. Эксклюзивные провайдеры, высокие лимиты на вывод. VIP-программа с персональным менеджером. Идеально для высоких ставок.`,
     rating: 4.3, userRating: 4.1, reviewCount: 8700, type: 'casino', founded: 2014,
-    license: 'Curaçao eGaming', website: 'https://frank.casino',
+    license: 'Curaçao eGaming', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: '150% до 100 000 ₽ + 250 FS',
     bonuses: [
       { type: 'deposit', title: 'Приветственный бонус', description: '150% + 250 FS', amount: '150% до 100 000 ₽', wagering: '40x', validDays: 30 },
@@ -563,7 +563,7 @@ export const services: Service[] = [
     description: 'Casino-X — международное казино с пакетом до 300 000 ₽ на 4 депозита. Более 3000 слотов, live-казино, эксклюзивные игры.',
     fullDescription: `Casino-X работает с 2012 года по лицензии Curaçao. Приветственный пакет до 300 000 ₽ на первые 4 депозита. Более 3000 слотов от 60+ провайдеров. Live-казино с русскоязычными дилерами. Эксклюзивные игры и turbo-режим.`,
     rating: 4.2, userRating: 4.0, reviewCount: 9100, type: 'casino', founded: 2012,
-    license: 'Curaçao eGaming', website: 'https://casino-x.com',
+    license: 'Curaçao eGaming', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'До 300 000 ₽ на 4 депозита',
     bonuses: [
       { type: 'deposit', title: 'Пакет на 4 депозита', description: 'Суммарно до 300 000 ₽', amount: 'до 300 000 ₽', wagering: '40x', validDays: 30 },
@@ -585,7 +585,7 @@ export const services: Service[] = [
     description: 'Pin-Up Casino — популярное казино с бонусом 120% до 100 000 ₽ + 250 фриспинов. Авиатор, краш-игры, слоты, живое казино.',
     fullDescription: `Pin-Up Casino работает с 2016 года по лицензии Curaçao. Приветственный бонус 120% до 100 000 ₽ + 250 фриспинов за первый депозит. Авиатор, краш-игры, тысячи слотов. Живое казино с реальными дилерами. Быстрые игры для любителей динамики.`,
     rating: 4.3, userRating: 4.2, reviewCount: 14200, type: 'casino', founded: 2016,
-    license: 'Curaçao eGaming', website: 'https://pinup.com',
+    license: 'Curaçao eGaming', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: '120% до 100 000 ₽ + 250 FS',
     bonuses: [
       { type: 'deposit', title: 'Приветственный бонус', description: '120% + 250 фриспинов', amount: '120% до 100 000 ₽', wagering: '50x', validDays: 30 },
@@ -608,7 +608,7 @@ export const services: Service[] = [
     description: 'Vavada — казино с бездепозитным бонусом 100 фриспинов за регистрацию. Бонус 100% до 50 000 ₽ за первый депозит.',
     fullDescription: `Vavada работает с 2017 года по лицензии Curaçao. Уникальное предложение: 100 фриспинов без депозита просто за регистрацию. Плюс приветственный бонус 100% до 50 000 ₽ за первый депозит. Тысячи слотов, live-казино, программа лояльности с 12 уровнями.`,
     rating: 4.4, userRating: 4.2, reviewCount: 10500, type: 'casino', founded: 2017,
-    license: 'Curaçao eGaming', website: 'https://vavada.com',
+    license: 'Curaçao eGaming', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: '100 FS без депозита + 100%',
     bonuses: [
       { type: 'registration', title: '100 фриспинов без депозита', description: 'Бесплатные спины за регистрацию', amount: '100 фриспинов', wagering: '60x', validDays: 7 },
@@ -631,7 +631,7 @@ export const services: Service[] = [
     description: 'Cat Casino — уютное онлайн-казино с кошачьей тематикой. Бонус 100% до 30 000 ₽ + 100 фриспинов. Удобное приложение.',
     fullDescription: `Cat Casino работает с 2020 года по лицензии Curaçao. Приветственный бонус 100% до 30 000 ₽ + 100 фриспинов за первый депозит. Уникальный дизайн, большой выбор слотов, live-казино. Программа лояльности с наградами.`,
     rating: 4.1, userRating: 4.0, reviewCount: 5600, type: 'casino', founded: 2020,
-    license: 'Curaçao eGaming', website: 'https://cat.casino',
+    license: 'Curaçao eGaming', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: '100% до 30 000 ₽ + 100 FS',
     bonuses: [
       { type: 'deposit', title: 'Приветственный бонус', description: '100% + 100 фриспинов', amount: '100% до 30 000 ₽', wagering: '40x', validDays: 30 },
@@ -653,7 +653,7 @@ export const services: Service[] = [
     description: 'Loki Casino — казино с бонусом на 4 депозита: суммарно до 50 000 ₽ + 200 фриспинов. Live-казино, турниры.',
     fullDescription: `Loki Casino работает с 2017 года по лицензии Curaçao. Бонус на 4 первых депозита: суммарно до 50 000 ₽ + 200 фриспинов. Ежедневные турниры слотов с призовыми фондами. Live-казино с реальными дилерами. Программа лояльности.`,
     rating: 4.0, userRating: 3.9, reviewCount: 4800, type: 'casino', founded: 2017,
-    license: 'Curaçao eGaming', website: 'https://loki.casino',
+    license: 'Curaçao eGaming', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'До 50 000 ₽ + 200 FS',
     bonuses: [
       { type: 'deposit', title: 'Пакет на 4 депозита', description: 'До 50 000 ₽ + 200 FS суммарно', amount: 'до 50 000 ₽', wagering: '40x', validDays: 30 },
@@ -674,7 +674,7 @@ export const services: Service[] = [
     description: 'Fresh Casino — свежее онлайн-казино с бонусом 150% до 75 000 ₽ + 200 фриспинов. Программа лояльности, кэшбек до 15%.',
     fullDescription: `Fresh Casino работает по лицензии Curaçao. Приветственный бонус 150% до 75 000 ₽ + 200 фриспинов за первый депозит. Программа лояльности с 6 уровнями. Кэшбек до 15% для постоянных игроков. Еженедельные турниры.`,
     rating: 4.1, userRating: 3.9, reviewCount: 4300, type: 'casino', founded: 2019,
-    license: 'Curaçao eGaming', website: 'https://fresh.casino',
+    license: 'Curaçao eGaming', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: '150% до 75 000 ₽ + 200 FS',
     bonuses: [
       { type: 'deposit', title: 'Приветственный бонус', description: '150% + 200 фриспинов', amount: '150% до 75 000 ₽', wagering: '40x', validDays: 30 },
@@ -697,7 +697,7 @@ export const services: Service[] = [
     description: 'Riobet — одно из первых казино СНГ с бездепозитным бонусом 100 фриспинов. Работает с 2014 года, тысячи слотов.',
     fullDescription: `Riobet работает с 2014 года по лицензии Curaçao. Один из пионеров рынка СНГ. Уникальный бездепозитный бонус: 100 фриспинов просто за регистрацию. Тысячи слотов, live-казино. Программа лояльности Riobet Club.`,
     rating: 4.0, userRating: 3.9, reviewCount: 8900, type: 'casino', founded: 2014,
-    license: 'Curaçao eGaming', website: 'https://riobet.com',
+    license: 'Curaçao eGaming', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: '100 FS без депозита',
     bonuses: [
       { type: 'registration', title: '100 фриспинов без депозита', description: 'Бесплатные спины за регистрацию', amount: '100 фриспинов', wagering: '30x', validDays: 7 },
@@ -718,7 +718,7 @@ export const services: Service[] = [
     description: 'Bet365 — крупнейший мировой букмекер. Прямые трансляции 140 000+ событий в год. Широкая линия на все виды спорта.',
     fullDescription: `Bet365 — крупнейший в мире букмекер по объёму ставок. Более 140 000 прямых спортивных трансляций в год. Ставки на 30+ видов спорта, live-казино, покер. Мобильное приложение признано лучшим в индустрии. Работает по лицензии Мальты и Гибралтара.`,
     rating: 4.5, userRating: 4.3, reviewCount: 35000, type: 'both', founded: 2000,
-    license: 'Malta Gaming Authority, Gibraltar', website: 'https://bet365.com',
+    license: 'Malta Gaming Authority, Gibraltar', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'Приветственный бонус',
     bonuses: [
       { type: 'deposit', title: 'Приветственный бонус', description: 'Бонус за первый депозит', amount: 'уточняйте на сайте', wagering: '3x', validDays: 30 },
@@ -740,7 +740,7 @@ export const services: Service[] = [
     description: 'Betway — крупный международный оператор. Спортивные ставки + казино. Лицензии Malta и UK Gambling Commission.',
     fullDescription: `Betway работает с 2006 года. Один из крупнейших европейских операторов. Ставки на 30+ видов спорта, live-казино, слоты. Лицензии Malta Gaming Authority и UK Gambling Commission. Спонсор крупных спортивных событий.`,
     rating: 4.2, userRating: 4.0, reviewCount: 18000, type: 'both', founded: 2006,
-    license: 'Malta Gaming Authority', website: 'https://betway.com',
+    license: 'Malta Gaming Authority', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'Приветственный бонус',
     bonuses: [
       { type: 'deposit', title: 'Приветственный бонус', description: 'Бонус за первый депозит', amount: 'уточняйте на сайте', wagering: '3x', validDays: 30 },
@@ -761,7 +761,7 @@ export const services: Service[] = [
     description: 'William Hill работает с 1934 года — один из старейших и авторитетнейших букмекеров мира. Широкая линия, Live-казино.',
     fullDescription: `William Hill — легенда мировой индустрии ставок с 1934 года. Один из крупнейших операторов Великобритании. Ставки на все виды спорта, live-казино, бинго, покер. Лицензия UK Gambling Commission.`,
     rating: 4.1, userRating: 3.9, reviewCount: 22000, type: 'both', founded: 1934,
-    license: 'UK Gambling Commission', website: 'https://williamhill.com',
+    license: 'UK Gambling Commission', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'Приветственный бонус',
     bonuses: [
       { type: 'deposit', title: 'Приветственный бонус', description: 'Бонус за первый депозит', amount: 'уточняйте на сайте', wagering: '3x', validDays: 30 },
@@ -782,7 +782,7 @@ export const services: Service[] = [
     description: 'Bwin работает с 1997 года. Спонсор Реал Мадрид и других топ-клубов. Ставки на спорт, покер, казино.',
     fullDescription: `Bwin — один из пионеров онлайн-беттинга с 1997 года. Спонсор Реал Мадрид, Байер, Атлетико. Широкая спортивная линия, покер-рум, онлайн-казино. Лицензии Malta Gaming Authority и Gibraltar. Один из брендов GVC/Entain Group.`,
     rating: 4.1, userRating: 3.9, reviewCount: 16000, type: 'both', founded: 1997,
-    license: 'Malta Gaming Authority', website: 'https://bwin.com',
+    license: 'Malta Gaming Authority', website: 'https://1wfypv.com/casino/list?open=register&p=q4lj',
     mainBonus: 'Приветственный бонус',
     bonuses: [
       { type: 'deposit', title: 'Приветственный бонус', description: 'Бонус за первый депозит', amount: 'уточняйте на сайте', wagering: '5x', validDays: 30 },
