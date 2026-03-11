@@ -5,7 +5,7 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://betrank.pro'),
+  metadataBase: new URL('https://betrank.vercel.app'),
   title: {
     default: 'BetRank — Рейтинг лучших казино и букмекеров 2026',
     template: '%s | BetRank',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ru_RU',
-    url: 'https://betrank.pro',
+    url: 'https://betrank.vercel.app',
     siteName: 'BetRank',
     title: 'BetRank — Рейтинг лучших казино и букмекеров',
     description: 'Независимый рейтинг онлайн-казино и букмекерских контор. Найдите лучшие бонусы 2026.',
@@ -45,11 +45,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           '@context': 'https://schema.org',
           '@type': 'WebSite',
           name: 'BetRank',
-          url: 'https://betrank.pro',
+          url: 'https://betrank.vercel.app',
           description: 'Рейтинг лучших онлайн-казино и букмекерских контор',
           potentialAction: {
             '@type': 'SearchAction',
-            target: 'https://betrank.pro/reviews?q={search_term_string}',
+            target: 'https://betrank.vercel.app/reviews?q={search_term_string}',
             'query-input': 'required name=search_term_string',
           },
         }) }} />
