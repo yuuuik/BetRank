@@ -44,7 +44,7 @@ export function BonusesClient({ allBonuses }: Props) {
               className={`service-card p-4 text-center cursor-pointer hover:scale-105 transition-all text-left w-full ${
                 isActive ? 'ring-2' : ''
               }`}
-              style={isActive ? { ringColor: color, boxShadow: `0 0 0 2px ${color}60` } : {}}
+              style={isActive ? { boxShadow: `0 0 0 2px ${color}60` } : undefined}
             >
               <div className="w-10 h-10 rounded-xl mx-auto mb-2 flex items-center justify-center transition-all"
                 style={{
