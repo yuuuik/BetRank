@@ -91,7 +91,6 @@ export default function PaymentMethodPage({ params }: Props) {
         </div>
       </div>
 
-      <EmailSubscribe compact />
     </div>
   )
 }

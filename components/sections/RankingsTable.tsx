@@ -52,7 +52,7 @@ export function RankingsTable() {
                     </td>
                     <td className="px-4 py-4">
                       <Link href={`/review/${service.slug}`} target="_blank" className="flex items-center gap-3 hover:text-purple-300 transition-colors">
-                        <BrandLogo website={service.website} name={service.name} logo={service.logo} accentColor={service.accentColor} size="sm" />
+                        <BrandLogo website={service.website} name={service.name} logo={service.logo} logoUrl={service.logoUrl} accentColor={service.accentColor} size="sm" />
                         <div>
                           <p className="text-white font-600 text-sm" style={{fontFamily:'Exo 2, sans-serif'}}>{service.name}</p>
                           <p className="text-slate-500 text-xs hidden sm:block">{service.tagline.slice(0, 40)}...</p>
@@ -60,12 +60,8 @@ export function RankingsTable() {
                       </Link>
                     </td>
                     <td className="px-4 py-4 hidden md:table-cell">
-                      <span className={`badge text-xs px-2.5 py-1 ${
-                        service.type === 'casino' ? 'badge-featured' :
-                        service.type === 'betting' ? 'bg-blue-900/30 text-blue-300 border border-blue-700/30' :
-                        'bg-green-900/30 text-green-300 border border-green-700/30'
-                      }`}>
-                        {service.type === 'casino' ? 'Казино' : service.type === 'betting' ? 'Букмекер' : 'Комбо'}
+                      <span className="badge badge-featured text-xs px-2.5 py-1">
+                        Казино
                       </span>
                     </td>
                     <td className="px-4 py-4">
@@ -85,7 +81,7 @@ export function RankingsTable() {
                       <span className="text-slate-300 text-sm">{service.minDeposit} ₽</span>
                     </td>
                     <td className="px-4 py-4 text-right">
-                      <a href={service.website} target="_blank" rel="noopener noreferrer nofollow"
+                      <a href={service.refUrl || service.website} target="_blank" rel="noopener noreferrer nofollow"
                         className="inline-flex items-center gap-1 btn-neon text-xs py-1.5 px-3">
                         Играть <ExternalLink size={11} />
                       </a>

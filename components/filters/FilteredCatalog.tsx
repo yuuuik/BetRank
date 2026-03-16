@@ -45,13 +45,8 @@ export function FilteredCatalog({ services, title, showRanks, hideTypeFilter }: 
       if (filters.freeSpins && !s.hasFreeSpins) return false
       if (filters.depositBonus && !s.hasDepositBonus) return false
       if (filters.cashback && !s.hasCashback) return false
-      if (filters.liveBetting && !s.hasLiveBetting) return false
       if (filters.mobileApp && !s.hasMobileApp) return false
       if (filters.fastWithdrawal && !s.hasFastWithdrawal) return false
-      if (!hideTypeFilter && filters.type !== 'all') {
-        if (filters.type === 'casino' && s.type === 'betting') return false
-        if (filters.type === 'betting' && s.type === 'casino') return false
-      }
       return true
     })
     .sort((a, b) => {
@@ -65,8 +60,7 @@ export function FilteredCatalog({ services, title, showRanks, hideTypeFilter }: 
   const paginated = filtered.slice(0, page * ITEMS_PER_PAGE)
   const activeFilterCount = [
     filters.registrationBonus, filters.freeSpins, filters.depositBonus,
-    filters.cashback, filters.liveBetting, filters.mobileApp, filters.fastWithdrawal,
-    filters.type !== 'all'
+    filters.cashback, filters.mobileApp, filters.fastWithdrawal,
   ].filter(Boolean).length
 
   const filterChips = [
@@ -74,7 +68,6 @@ export function FilteredCatalog({ services, title, showRanks, hideTypeFilter }: 
     { key: 'freeSpins', label: 'Фриспины' },
     { key: 'depositBonus', label: 'Бонус на депозит' },
     { key: 'cashback', label: 'Кэшбек' },
-    { key: 'liveBetting', label: 'Live-ставки' },
     { key: 'mobileApp', label: 'Мобильное приложение' },
     { key: 'fastWithdrawal', label: 'Быстрый вывод' },
   ] as const
@@ -109,17 +102,6 @@ export function FilteredCatalog({ services, title, showRanks, hideTypeFilter }: 
           <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none" />
         </div>
 
-        {/* Type filter */}
-        {!hideTypeFilter && (
-          <div className="flex rounded-xl overflow-hidden border border-purple-900/30">
-            {(['all','casino','betting'] as const).map(t => (
-              <button key={t} onClick={() => { setFilters(p => ({...p, type: t})); setPage(1) }}
-                className={`px-3 py-2 text-sm font-500 transition-all ${filters.type === t ? 'bg-purple-700/40 text-white' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}>
-                {t === 'all' ? 'Все' : t === 'casino' ? 'Казино' : 'Букмекеры'}
-              </button>
-            ))}
-          </div>
-        )}
 
         {/* Filter toggle */}
         <button onClick={() => setFiltersOpen(!filtersOpen)}

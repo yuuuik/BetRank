@@ -23,7 +23,7 @@ export default function ReviewsPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {services.map(service => (
+        {[...services].sort((a, b) => b.rating - a.rating).map(service => (
           <Link key={service.slug} href={`/review/${service.slug}`} target="_blank"
             className="service-card p-5 group block">
             <div className="flex items-center gap-4 mb-4">
@@ -31,7 +31,7 @@ export default function ReviewsPage() {
               <BrandLogo
                 website={service.website}
                 name={service.name}
-                logo={service.logo}
+                logo={service.logo} logoUrl={service.logoUrl}
                 accentColor={service.accentColor}
                 size="md"
               />

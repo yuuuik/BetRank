@@ -32,7 +32,7 @@ export function HeroSection() {
           {/* Title */}
           <h1 className="section-title text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
             Рейтинг лучших{' '}
-            <span className="gradient-text">казино и букмекеров</span>{' '}
+            <span className="gradient-text">онлайн-казино</span>{' '}
             2026
           </h1>
 

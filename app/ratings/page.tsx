@@ -2,11 +2,11 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { services } from '@/lib/data'
 import { BrandLogo } from '@/components/ui/BrandLogo'
-import { ExternalLink, Star, Info, TrendingUp, TrendingDown, Minus } from 'lucide-react'
+import { ExternalLink, Star, Info, TrendingUp, TrendingDown, Minus, Smartphone, Zap, Coins } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Рейтинг казино и букмекеров 2026 — Полное сравнение',
-  description: 'Полный рейтинг онлайн-казино и букмекеров 2026. Сравнение по рейтингу, бонусам, лицензии, скорости выплат.',
+  title: 'Рейтинг онлайн-казино 2026 — Полное сравнение',
+  description: 'Полный рейтинг онлайн-казино 2026. Сравнение по рейтингу, бонусам, лицензии, скорости выплат.',
 }
 
 const RATING_CHANGES: Record<string, number> = {
@@ -37,6 +37,7 @@ const RATING_CHANGES: Record<string, number> = {
   'vavada':        +3,
   'pin-up':        -1,
   'cat-casino':     0,
+  'stake':         +2,
 }
 
 function getChange(slug: string): number {
@@ -63,7 +64,7 @@ export default function RatingsPage() {
       <div className="mb-8">
         <h1 className="section-title text-3xl md:text-4xl text-white mb-3">Полный рейтинг 2026</h1>
         <p className="text-slate-400 text-lg max-w-2xl">
-          Детальное сравнение всех казино и букмекеров по ключевым параметрам
+          Детальное сравнение всех казино по ключевым параметрам
         </p>
       </div>
 
@@ -78,7 +79,7 @@ export default function RatingsPage() {
             <p className="text-slate-400 text-xs leading-relaxed">
               Лицензия и надёжность <span className="text-purple-300">25%</span> · Бонусы{' '}
               <span className="text-purple-300">20%</span> · Выплаты{' '}
-              <span className="text-purple-300">20%</span> · Линия/ставки{' '}
+              <span className="text-purple-300">20%</span> · Игровой ассортимент{' '}
               <span className="text-purple-300">15%</span> · Мобильность{' '}
               <span className="text-purple-300">10%</span> · Поддержка{' '}
               <span className="text-purple-300">10%</span>
@@ -90,9 +91,10 @@ export default function RatingsPage() {
       {/* Фильтры */}
       <div className="flex flex-wrap gap-2 mb-6">
         {[
-          { label: 'Все сервисы', href: '/ratings', active: true },
-          { label: 'Казино', href: '/casino', active: false },
-          { label: 'Букмекеры', href: '/betting', active: false },
+          { label: 'Все казино', href: '/ratings', active: true },
+          { label: 'С бездеп. бонусом', href: '/casino/bez-depozita', active: false },
+          { label: 'С фриспинами', href: '/casino/s-frispinami', active: false },
+          { label: 'Быстрый вывод', href: '/casino/s-bystrim-vivodom', active: false },
         ].map(({ label, href, active }) => (
           <Link key={label} href={href}
             className={`px-4 py-2 rounded-xl text-sm font-500 border transition-all ${
@@ -127,7 +129,7 @@ export default function RatingsPage() {
                 {/* Лого */}
                 <div className="shrink-0">
                   <BrandLogo website={service.website} name={service.name}
-                    logo={service.logo} accentColor={service.accentColor} size="md" />
+                    logo={service.logo} logoUrl={service.logoUrl} accentColor={service.accentColor} size="md" />
                 </div>
 
                 {/* Название + тип + описание */}
@@ -139,14 +141,8 @@ export default function RatingsPage() {
                     {service.badge && (
                       <span className="badge badge-featured text-xs">{service.badge}</span>
                     )}
-                    <span className={`text-xs px-2 py-0.5 rounded-full font-500 border ${
-                      service.type === 'casino'
-                        ? 'bg-purple-900/30 text-purple-300 border-purple-700/30'
-                        : service.type === 'betting'
-                        ? 'bg-blue-900/30 text-blue-300 border-blue-700/30'
-                        : 'bg-green-900/30 text-green-300 border-green-700/30'
-                    }`}>
-                      {service.type === 'casino' ? 'Казино' : service.type === 'betting' ? 'Букмекер' : 'Казино + Спорт'}
+                    <span className="text-xs px-2 py-0.5 rounded-full font-500 border bg-purple-900/30 text-purple-300 border-purple-700/30">
+                      Казино
                     </span>
                   </div>
                   <p className="text-slate-500 text-xs truncate hidden sm:block">{service.tagline}</p>
@@ -193,23 +189,18 @@ export default function RatingsPage() {
                 {/* Особенности */}
                 <div className="shrink-0 hidden xl:flex flex-col gap-1 w-28">
                   {service.hasMobileApp && (
-                    <span className="text-xs px-1.5 py-0.5 rounded bg-slate-800/80 text-slate-400 border border-slate-700/40">
-                      📱 App
-                    </span>
-                  )}
-                  {service.hasLiveBetting && (
-                    <span className="text-xs px-1.5 py-0.5 rounded bg-red-900/20 text-red-400/80 border border-red-800/30">
-                      🔴 Live
+                    <span className="flex items-center gap-1 text-xs px-1.5 py-0.5 rounded bg-slate-800/80 text-slate-400 border border-slate-700/40">
+                      <Smartphone size={10} /> App
                     </span>
                   )}
                   {service.hasFastWithdrawal && (
-                    <span className="text-xs px-1.5 py-0.5 rounded bg-yellow-900/20 text-yellow-400/80 border border-yellow-800/30">
-                      ⚡ Быстрый вывод
+                    <span className="flex items-center gap-1 text-xs px-1.5 py-0.5 rounded bg-yellow-900/20 text-yellow-400/80 border border-yellow-800/30">
+                      <Zap size={10} /> Быстрый вывод
                     </span>
                   )}
                   {service.hasCashback && (
-                    <span className="text-xs px-1.5 py-0.5 rounded bg-emerald-900/20 text-emerald-400/80 border border-emerald-800/30">
-                      💰 Кэшбек
+                    <span className="flex items-center gap-1 text-xs px-1.5 py-0.5 rounded bg-emerald-900/20 text-emerald-400/80 border border-emerald-800/30">
+                      <Coins size={10} /> Кэшбек
                     </span>
                   )}
                 </div>
@@ -232,7 +223,7 @@ export default function RatingsPage() {
                     className="hidden sm:inline-flex items-center gap-1 text-xs text-slate-400 hover:text-purple-300 transition-colors py-2 px-3 rounded-xl border border-slate-700/40 hover:border-purple-700/40 whitespace-nowrap">
                     Обзор
                   </Link>
-                  <a href={service.website} target="_blank" rel="noopener noreferrer nofollow"
+                  <a href={service.refUrl || service.website} target="_blank" rel="noopener noreferrer nofollow"
                     className="inline-flex items-center gap-1 btn-neon text-xs py-2 px-3 whitespace-nowrap">
                     Играть <ExternalLink size={11} />
                   </a>
@@ -246,14 +237,6 @@ export default function RatingsPage() {
 
       {/* Легенда */}
       <div className="mt-6 glass rounded-xl border border-purple-900/20 p-4 flex flex-wrap gap-4 text-xs text-slate-500">
-        <span className="flex items-center gap-1.5">
-          <span className="w-3 h-3 rounded bg-green-900/50 border border-green-700/30 inline-block" />
-          ФНС России — российская лицензия по 244-ФЗ
-        </span>
-        <span className="flex items-center gap-1.5">
-          <span className="w-3 h-3 rounded bg-slate-800 border border-slate-700/40 inline-block" />
-          Зарубежная лицензия (Curaçao, MGA и др.)
-        </span>
         <span className="flex items-center gap-1.5 ml-auto">
           <TrendingUp size={12} className="text-emerald-400" /> Рост за месяц &nbsp;
           <TrendingDown size={12} className="text-red-400" /> Снижение за месяц

@@ -51,11 +51,11 @@ function CompareTable({ a, b }: { a: typeof services[0]; b: typeof services[0] }
         <div className="grid grid-cols-3 border-b border-purple-900/20">
           <div className="p-3 border-r border-purple-900/20" />
           <div className="p-3 flex items-center justify-center border-r border-purple-900/20">
-            <BrandLogo website={a.website} name={a.name} logo={a.logo} accentColor={a.accentColor} size="sm" />
+            <BrandLogo website={a.website} name={a.name} logo={a.logo} logoUrl={a.logoUrl} accentColor={a.accentColor} size="sm" />
             <span className="text-white text-sm font-700 ml-2 hidden sm:inline" style={{ fontFamily: 'Exo 2, sans-serif' }}>{a.name}</span>
           </div>
           <div className="p-3 flex items-center justify-center">
-            <BrandLogo website={b.website} name={b.name} logo={b.logo} accentColor={b.accentColor} size="sm" />
+            <BrandLogo website={b.website} name={b.name} logo={b.logo} logoUrl={b.logoUrl} accentColor={b.accentColor} size="sm" />
             <span className="text-white text-sm font-700 ml-2 hidden sm:inline" style={{ fontFamily: 'Exo 2, sans-serif' }}>{b.name}</span>
           </div>
         </div>
@@ -133,7 +133,8 @@ function ServicePicker({
 
   const filtered = useMemo(() => {
     const q = search.toLowerCase()
-    return services
+    return [...services]
+      .sort((a, b) => b.rating - a.rating)
       .filter(s => s.slug !== exclude)
       .filter(s => !q || s.name.toLowerCase().includes(q) || s.slug.includes(q))
       .slice(0, 20)
@@ -145,7 +146,7 @@ function ServicePicker({
       {selected ? (
         <div className="glass rounded-2xl border p-4 flex items-center gap-3 relative"
           style={{ borderColor: selected.accentColor + '50' }}>
-          <BrandLogo website={selected.website} name={selected.name} logo={selected.logo} accentColor={selected.accentColor} size="md" />
+          <BrandLogo key={selected.slug} website={selected.website} name={selected.name} logo={selected.logo} logoUrl={selected.logoUrl} accentColor={selected.accentColor} size="md" />
           <div className="flex-1 min-w-0">
             <p className="text-white font-700 text-sm truncate" style={{ fontFamily: 'Exo 2, sans-serif' }}>{selected.name}</p>
             <p className="text-slate-500 text-xs truncate">{selected.mainBonus}</p>
@@ -196,7 +197,7 @@ function ServicePicker({
               {filtered.map(s => (
                 <button key={s.slug} onClick={() => { onSelect(s); setOpen(false); setSearch('') }}
                   className="w-full flex items-center gap-3 px-4 py-3 hover:bg-white/5 transition-colors text-left group">
-                  <BrandLogo website={s.website} name={s.name} logo={s.logo} accentColor={s.accentColor} size="sm" />
+                  <BrandLogo website={s.website} name={s.name} logo={s.logo} logoUrl={s.logoUrl} accentColor={s.accentColor} size="sm" />
                   <div className="flex-1 min-w-0">
                     <p className="text-white text-sm font-600 truncate group-hover:text-purple-300 transition-colors">
                       {s.name}
@@ -238,8 +239,8 @@ export default function ComparePage() {
 
   // Популярные пары для быстрого старта
   const quickPairs = [
-    ['1xbet', '1win'], ['fonbet', 'winline'], ['leon', 'betcity'],
-    ['mostbet', 'melbet'], ['joycasino', 'vavada'],
+    ['1win', 'vavada'], ['jozz', 'joycasino'], ['stake', 'rox'],
+    ['playfortuna', 'booi'], ['starda', 'monro'],
   ]
 
   return (

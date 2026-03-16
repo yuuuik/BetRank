@@ -71,7 +71,7 @@ export default function ComparePage({ params }: Props) {
       {/* Шапка сравнения */}
       <div className="grid grid-cols-3 gap-4 mb-4">
         <div className="glass rounded-2xl border border-purple-900/20 p-5 text-center col-start-1">
-          <BrandLogo website={a.website} name={a.name} logo={a.logo} accentColor={a.accentColor} size="lg" />
+          <BrandLogo website={a.website} name={a.name} logo={a.logo} logoUrl={a.logoUrl} accentColor={a.accentColor} size="lg" />
           <p className="text-white font-700 text-lg mt-3" style={{ fontFamily: 'Exo 2, sans-serif' }}>{a.name}</p>
           {a.badge && <span className="badge badge-featured text-xs mt-1 inline-block">{a.badge}</span>}
           <div className="flex justify-center gap-1 mt-2">
@@ -98,7 +98,7 @@ export default function ComparePage({ params }: Props) {
         </div>
 
         <div className="glass rounded-2xl border border-purple-900/20 p-5 text-center">
-          <BrandLogo website={b.website} name={b.name} logo={b.logo} accentColor={b.accentColor} size="lg" />
+          <BrandLogo website={b.website} name={b.name} logo={b.logo} logoUrl={b.logoUrl} accentColor={b.accentColor} size="lg" />
           <p className="text-white font-700 text-lg mt-3" style={{ fontFamily: 'Exo 2, sans-serif' }}>{b.name}</p>
           {b.badge && <span className="badge badge-featured text-xs mt-1 inline-block">{b.badge}</span>}
           <div className="flex justify-center gap-1 mt-2">
@@ -177,7 +177,6 @@ export default function ComparePage({ params }: Props) {
         </div>
       </div>
 
-      <EmailSubscribe compact />
     </div>
   )
 }

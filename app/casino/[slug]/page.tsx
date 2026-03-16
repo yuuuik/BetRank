@@ -110,7 +110,6 @@ export default function CasinoCategoryPage({ params }: Props) {
         </div>
       </div>
 
-      <EmailSubscribe compact />
     </div>
   )
 }

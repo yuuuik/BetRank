@@ -40,6 +40,7 @@ export interface Service {
   founded: number
   license: string
   website: string
+  refUrl?: string
   mainBonus: string
   bonuses: BonusOffer[]
   hasLiveBetting: boolean

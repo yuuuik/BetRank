@@ -3,6 +3,7 @@ import { ExternalLink, Globe, Shield, Star } from 'lucide-react'
 
 interface SiteScreenshotProps {
   website: string
+  refUrl?: string
   name: string
   accentColor: string
   mainBonus: string
@@ -10,7 +11,7 @@ interface SiteScreenshotProps {
   license: string
 }
 
-export function SiteScreenshot({ website, name, accentColor, mainBonus, rating, license }: SiteScreenshotProps) {
+export function SiteScreenshot({ website, refUrl, name, accentColor, mainBonus, rating, license }: SiteScreenshotProps) {
   const domain = website.replace(/https?:\/\//, '').replace(/\/$/, '').split('/')[0]
 
   return (
@@ -53,7 +54,7 @@ export function SiteScreenshot({ website, name, accentColor, mainBonus, rating, 
               <span className="text-amber-400 text-sm font-600 ml-1">{rating}</span>
             </div>
           </div>
-          <a href={website} target="_blank" rel="noopener noreferrer nofollow"
+          <a href={refUrl || website} target="_blank" rel="noopener noreferrer nofollow"
             className="shrink-0 flex items-center gap-1.5 text-xs px-4 py-2 rounded-xl font-600 text-white transition-opacity hover:opacity-80"
             style={{background: accentColor, fontFamily:'Exo 2, sans-serif'}}>
             Открыть <ExternalLink size={12} />

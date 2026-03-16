@@ -1,14 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
 
-interface BrandLogoProps {
-  website: string
-  name: string
-  logo: string
-  accentColor: string
-  size?: 'sm' | 'md' | 'lg'
-}
-
 // Глобальный кэш: домен → рабочий URL или 'failed'
 // Живёт всё время работы вкладки, не сбрасывается при ремонте компонентов
 const logoCache: Record<string, string | 'failed'> = {}
@@ -25,7 +17,11 @@ function getSources(domain: string): string[] {
 function probeUrl(url: string): Promise<string> {
   return new Promise((resolve, reject) => {
     const img = new Image()
-    img.onload = () => resolve(url)
+    img.onload = () => {
+      // Reject tiny default favicons (16×16 placeholder returned by Google when no real favicon exists)
+      if (img.naturalWidth <= 16 && img.naturalHeight <= 16) reject()
+      else resolve(url)
+    }
     img.onerror = () => reject()
     img.src = url
   })
@@ -49,23 +45,33 @@ async function resolveLogoUrl(domain: string): Promise<string | null> {
   return null
 }
 
-export function BrandLogo({ website, name, logo, accentColor, size = 'md' }: BrandLogoProps) {
+interface BrandLogoProps {
+  website: string
+  name: string
+  logo: string
+  logoUrl?: string
+  accentColor: string
+  size?: 'sm' | 'md' | 'lg'
+}
+
+export function BrandLogo({ website, name, logo, logoUrl, accentColor, size = 'md' }: BrandLogoProps) {
   const domain = website.replace(/https?:\/\//, '').replace(/\/$/, '').split('/')[0]
 
   const sizeClass = size === 'sm' ? 'w-11 h-11' : size === 'lg' ? 'w-20 h-20' : 'w-14 h-14'
   const imgSize   = size === 'sm' ? 36 : size === 'lg' ? 64 : 44
-  const textSize  = size === 'sm' ? 'text-2xl' : size === 'lg' ? 'text-5xl' : 'text-3xl'
   const radius    = size === 'lg' ? 'rounded-2xl' : 'rounded-xl'
   const border    = size === 'lg' ? 2 : 1
 
-  // Берём из кэша сразу если уже есть — без мигания при ремонте
-  const cached = logoCache[domain]
+  // Если передан logoUrl — используем его напрямую, без кэша и проб
+  const cached = logoUrl ? null : logoCache[domain]
   const [resolvedUrl, setResolvedUrl] = useState<string | null>(
-    cached && cached !== 'failed' ? cached : null
+    logoUrl ?? (cached && cached !== 'failed' ? cached : null)
   )
-  const [failed, setFailed] = useState(cached === 'failed')
+  const [failed, setFailed] = useState(!logoUrl && cached === 'failed')
 
   useEffect(() => {
+    // Локальный логотип — ничего не делаем
+    if (logoUrl) return
     // Если уже знаем результат — ничего не делаем
     if (logoCache[domain]) return
 
@@ -76,7 +82,7 @@ export function BrandLogo({ website, name, logo, accentColor, size = 'md' }: Bra
       else setFailed(true)
     })
     return () => { cancelled = true }
-  }, [domain])
+  }, [domain, logoUrl])
 
   return (
     <div
@@ -101,7 +107,16 @@ export function BrandLogo({ website, name, logo, accentColor, size = 'md' }: Bra
           }}
         />
       ) : (
-        <span className={`${textSize} select-none`}>{logo}</span>
+        <span
+          className="font-black tracking-tight select-none leading-none"
+          style={{
+            fontSize: size === 'lg' ? 22 : size === 'sm' ? 14 : 17,
+            color: accentColor,
+            fontFamily: 'Exo 2, sans-serif',
+          }}
+        >
+          {name.replace(/\s*(casino|казино)\s*/gi, ' ').replace(/[^a-zA-ZА-Яа-я0-9]/g, ' ').trim().replace(/\s+/g, '').slice(0, 4).toUpperCase()}
+        </span>
       )}
     </div>
   )

@@ -31,7 +31,7 @@ export function BestBonusesSection() {
             <div key={service.slug} className="service-card p-4 group">
               {/* Top row */}
               <div className="flex items-center gap-3 mb-3">
-                <BrandLogo website={service.website} name={service.name} logo={service.logo} accentColor={service.accentColor} size="sm" />
+                <BrandLogo website={service.website} name={service.name} logo={service.logo} logoUrl={service.logoUrl} accentColor={service.accentColor} size="sm" />
                 <div>
                   <p className="text-white font-700 text-sm" style={{fontFamily:'Exo 2, sans-serif', fontWeight:700}}>{service.name}</p>
                   <div className="flex items-center gap-1">
@@ -49,7 +49,7 @@ export function BestBonusesSection() {
                 </p>
               </div>
 
-              <a href={service.website} target="_blank" rel="noopener noreferrer nofollow"
+              <a href={service.refUrl || service.website} target="_blank" rel="noopener noreferrer nofollow"
                 className="btn-neon w-full justify-center text-xs py-2">
                 Получить бонус
               </a>

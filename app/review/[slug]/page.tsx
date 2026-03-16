@@ -69,7 +69,7 @@ export default function ReviewPage({ params }: Props) {
             <BrandLogo
               website={service.website}
               name={service.name}
-              logo={service.logo}
+              logo={service.logo} logoUrl={service.logoUrl}
               accentColor={service.accentColor}
               size="lg"
             />
@@ -92,7 +92,7 @@ export default function ReviewPage({ params }: Props) {
               </div>
             </div>
             <div className="shrink-0 flex flex-col gap-2 w-full md:w-56">
-              <a href={service.website} target="_blank" rel="noopener noreferrer nofollow"
+              <a href={service.refUrl || service.website} target="_blank" rel="noopener noreferrer nofollow"
                 className="btn-neon justify-center px-6 py-3 text-base">
                 Играть в {service.name} <ExternalLink size={16} />
               </a>
@@ -134,6 +134,7 @@ export default function ReviewPage({ params }: Props) {
             {/* Screenshot */}
             <SiteScreenshot
               website={service.website}
+              refUrl={service.refUrl}
               name={service.name}
               accentColor={service.accentColor}
               mainBonus={service.mainBonus}
@@ -297,7 +298,7 @@ export default function ReviewPage({ params }: Props) {
                     <BrandLogo
                       website={service.website}
                       name={service.name}
-                      logo={service.logo}
+                      logo={service.logo} logoUrl={service.logoUrl}
                       accentColor={service.accentColor}
                       size="md"
                     />
@@ -318,7 +319,7 @@ export default function ReviewPage({ params }: Props) {
                   </p>
                 </div>
 
-                <a href={service.website} target="_blank" rel="noopener noreferrer nofollow"
+                <a href={service.refUrl || service.website} target="_blank" rel="noopener noreferrer nofollow"
                   className="btn-neon w-full justify-center mb-2 text-sm py-2.5">
                   Играть сейчас <ExternalLink size={14} />
                 </a>
@@ -373,8 +374,6 @@ export default function ReviewPage({ params }: Props) {
               {/* Новости */}
               <NewsWidget />
 
-              {/* Email подписка компактная */}
-              <EmailSubscribe compact />
 
             </div>
           </div>

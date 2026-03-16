@@ -131,7 +131,7 @@ export default function ProviderPage({ params }: Props) {
                 <div key={casino.slug} className="service-card p-4 flex items-center gap-4">
                   <span className="text-slate-600 font-700 text-sm w-6 text-center shrink-0">{i + 1}</span>
                   <BrandLogo website={casino.website} name={casino.name}
-                    logo={casino.logo} accentColor={casino.accentColor} size="md" />
+                    logo={casino.logo} logoUrl={casino.logoUrl} accentColor={casino.accentColor} size="md" />
                   <div className="flex-1 min-w-0">
                     <p className="text-white font-700 text-sm" style={{ fontFamily: 'Exo 2, sans-serif' }}>{casino.name}</p>
                     <div className="flex items-center gap-1.5 mt-0.5">
@@ -150,7 +150,7 @@ export default function ProviderPage({ params }: Props) {
                       className="hidden sm:block text-xs py-2 px-3 rounded-xl border border-slate-700/40 text-slate-400 hover:text-white hover:border-purple-700/40 transition-all">
                       Обзор
                     </Link>
-                    <a href={casino.website} target="_blank" rel="noopener noreferrer nofollow"
+                    <a href={casino.refUrl || casino.website} target="_blank" rel="noopener noreferrer nofollow"
                       className="btn-neon text-xs py-2 px-3">
                       Играть <ExternalLink size={11} />
                     </a>

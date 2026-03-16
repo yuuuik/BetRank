@@ -23,7 +23,7 @@ export default function BonusTypePage({ params }: Props) {
   const cat = bonusCategories.find(c => c.slug === params.type)
   if (!cat) notFound()
 
-  const bonuses = services.flatMap(s =>
+  const bonuses = [...services].sort((a, b) => b.rating - a.rating).flatMap(s =>
     s.bonuses
       .filter(b => b.type === cat.type)
       .map(b => ({ ...b, service: s }))
@@ -59,7 +59,7 @@ export default function BonusTypePage({ params }: Props) {
           <div key={i} className="service-card p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <div className="flex items-center gap-3 sm:w-44 shrink-0">
               <BrandLogo website={bonus.service.website} name={bonus.service.name}
-                logo={bonus.service.logo} accentColor={bonus.service.accentColor} size="sm" />
+                logo={bonus.service.logo} logoUrl={bonus.service.logoUrl} accentColor={bonus.service.accentColor} size="sm" />
               <div>
                 <p className="text-white font-600 text-sm" style={{ fontFamily: 'Exo 2, sans-serif' }}>
                   {bonus.service.name}
@@ -79,7 +79,7 @@ export default function BonusTypePage({ params }: Props) {
               <p className="font-800 text-lg" style={{ fontFamily: 'Exo 2, sans-serif', fontWeight: 800, color: bonus.service.accentColor }}>
                 {bonus.amount}
               </p>
-              <a href={bonus.service.website} target="_blank" rel="noopener noreferrer nofollow"
+              <a href={bonus.service.refUrl || bonus.service.website} target="_blank" rel="noopener noreferrer nofollow"
                 className="btn-neon text-xs py-2 px-4">
                 Получить <ExternalLink size={12} />
               </a>
@@ -101,7 +101,6 @@ export default function BonusTypePage({ params }: Props) {
         </div>
       </div>
 
-      <EmailSubscribe compact />
     </div>
   )
 }

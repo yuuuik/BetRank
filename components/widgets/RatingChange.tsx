@@ -7,33 +7,21 @@ import Link from 'next/link'
 // 1xBet на 1 месте — был на 2 (вырос на +1), или был на 1 (без изменений)
 // Aviator/Spribe удалён из рейтинга — только реальные казино и БК
 const POSITION_CHANGES: Record<string, number> = {
-  '1xbet':        0,   // остаётся #1
-  '1win':        +2,   // вырос с 5 на 3
-  'fonbet':       0,   // стабилен
-  'winline':     +1,   // вырос
-  'mostbet':     -1,   // упал на позицию
-  'betcity':     +2,   // вырос
-  'leon':         0,   // стабилен
-  'betboom':     -1,   // упал
-  'olimpbet':    +1,   // вырос
-  'pari':        +3,   // большой рост
-  'melbet':      -2,   // упал
-  'marathon':    +1,
-  'liga-stavok': +1,
-  'tennisi':     -1,
-  'baltbet':      0,
-  'zenit':       -1,
-  'bettery':     +2,
-  'sportbet':    -1,
-  '1xstavka':    +1,
-  'bet-m':       -1,
-  'vulkan-russia': +1,
-  'joycasino':   -1,
-  'frank-casino': +1,
-  'slotv':       -1,
+  '1win':        +2,
   'vavada':      +2,
-  'pin-up':      -1,
-  'cat-casino':  +1,
+  'stake':        0,
+  'jozz':        +1,
+  'booi':        -1,
+  'playfortuna': +1,
+  'ramenbet':    -2,
+  'casino-x':    +1,
+  'joycasino':   -1,
+  'winity':       0,
+  'monro':       +1,
+  'starda':      -1,
+  'jet':         +2,
+  'rox':         -1,
+  'martin':      +1,
 }
 
 function getChange(slug: string): number {
@@ -47,7 +35,7 @@ export function RatingChangeTable() {
   // Исключаем не-казино/БК сервисы из рейтинга
   const topServices = [...services]
     .sort((a, b) => b.rating - a.rating)
-    .slice(0, 8)
+    .slice(0, 15)
 
   return (
     <div className="glass rounded-2xl border border-purple-900/20 overflow-hidden">
@@ -69,7 +57,7 @@ export function RatingChangeTable() {
             <Link key={service.slug} href={`/review/${service.slug}`} target="_blank"
               className="flex items-center gap-3 px-5 py-3 hover:bg-white/2 transition-colors group">
               <span className="text-slate-500 text-xs w-5 text-center font-600 shrink-0">{i + 1}</span>
-              <BrandLogo website={service.website} name={service.name} logo={service.logo}
+              <BrandLogo website={service.website} name={service.name} logo={service.logo} logoUrl={service.logoUrl}
                 accentColor={service.accentColor} size="sm" />
               <div className="flex-1 min-w-0">
                 <p className="text-white text-sm font-600 truncate group-hover:text-purple-300 transition-colors">{service.name}</p>
@@ -111,7 +99,7 @@ export function TopWeekWidget() {
           <Link key={service.slug} href={`/review/${service.slug}`} target="_blank"
             className="flex items-center gap-3 px-5 py-3 hover:bg-white/2 transition-colors group">
             <span className="text-base w-6 text-center shrink-0">{medals[i]}</span>
-            <BrandLogo website={service.website} name={service.name} logo={service.logo}
+            <BrandLogo website={service.website} name={service.name} logo={service.logo} logoUrl={service.logoUrl}
               accentColor={service.accentColor} size="sm" />
             <div className="flex-1 min-w-0">
               <p className="text-white text-sm font-600 truncate group-hover:text-purple-300 transition-colors">{service.name}</p>

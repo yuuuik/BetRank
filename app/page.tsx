@@ -8,30 +8,24 @@ import { providers } from '@/lib/providers'
 import { ServiceCard } from '@/components/cards/ServiceCard'
 import { EmailSubscribe } from '@/components/widgets/EmailSubscribe'
 import { RatingChangeTable } from '@/components/widgets/RatingChange'
-import { HotDealBanner } from '@/components/widgets/CountdownTimer'
 import Link from 'next/link'
 import { GameLogo, ProviderLogo } from '@/components/ui/ProviderLogo'
-import { ArrowRight, Zap, BookOpen, HelpCircle } from 'lucide-react'
+import { ArrowRight, Zap, BookOpen, HelpCircle, Gamepad2, Gift, Trophy, Sword, Shield, Bitcoin, Sparkles, UserCheck, Search, BarChart2, RefreshCw } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'BetRank — Рейтинг лучших казино и букмекеров 2026',
-  description: 'Независимый рейтинг онлайн-казино и букмекерских контор. Обзоры, бонусы, фриспины. Найдите лучшее казино с честными условиями.',
+  title: 'BetRank — Рейтинг лучших онлайн-казино 2026',
+  description: 'Независимый рейтинг онлайн-казино. Обзоры, бонусы, фриспины. Найдите лучшее казино с честными условиями.',
 }
 
 const quickLinks = [
-  { href: '/casino', icon: '🎰', title: 'Онлайн казино', desc: 'Топ казино с бонусами' },
-  { href: '/betting', icon: '⚽', title: 'Букмекеры', desc: 'Ставки на спорт' },
-  { href: '/bonuses', icon: '🎁', title: 'Все бонусы', desc: 'Фриспины и фрибеты' },
-  { href: '/ratings', icon: '🏆', title: 'Полный рейтинг', desc: 'Сравнение по 50+ критериям' },
+  { href: '/casino', Icon: Gamepad2, color: 'text-purple-400', bg: 'bg-purple-900/30 border-purple-700/30', title: 'Онлайн казино', desc: 'Топ казино с бонусами' },
+  { href: '/bonuses', Icon: Gift, color: 'text-amber-400', bg: 'bg-amber-900/30 border-amber-700/30', title: 'Все бонусы', desc: 'Фриспины и кэшбек' },
+  { href: '/ratings', Icon: Trophy, color: 'text-yellow-400', bg: 'bg-yellow-900/30 border-yellow-700/30', title: 'Полный рейтинг', desc: 'Сравнение по 50+ критериям' },
+  { href: '/games', Icon: Sword, color: 'text-emerald-400', bg: 'bg-emerald-900/30 border-emerald-700/30', title: 'Игры', desc: 'Слоты, краш, live' },
 ]
 
 export default function HomePage() {
   const topCasinos = services
-    .filter(s => s.type === 'casino' || s.type === 'both')
-    .sort((a, b) => b.rating - a.rating)
-    .slice(0, 3)
-  const topBetting = services
-    .filter(s => s.type === 'betting' || s.type === 'both')
     .sort((a, b) => b.rating - a.rating)
     .slice(0, 3)
 
@@ -40,7 +34,7 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'ItemList',
-        name: 'Рейтинг лучших онлайн-казино и букмекеров',
+        name: 'Рейтинг лучших онлайн-казино',
         numberOfItems: services.length,
         itemListElement: services.map((s, i) => ({
           '@type': 'ListItem', position: i + 1, name: s.name,
@@ -54,10 +48,12 @@ export default function HomePage() {
       <section className="py-8">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {quickLinks.map(({ href, icon, title, desc }) => (
+            {quickLinks.map(({ href, Icon, color, bg, title, desc }) => (
               <Link key={href} href={href}
                 className="service-card p-4 text-center group cursor-pointer hover:scale-105 transition-transform">
-                <div className="text-3xl mb-2">{icon}</div>
+                <div className={`w-12 h-12 rounded-2xl border ${bg} flex items-center justify-center mx-auto mb-3`}>
+                  <Icon size={22} className={color} />
+                </div>
                 <p className="text-white font-600 text-sm" style={{fontFamily:'Exo 2, sans-serif'}}>{title}</p>
                 <p className="text-slate-500 text-xs mt-0.5">{desc}</p>
               </Link>
@@ -91,28 +87,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Top betting */}
-      <section className="py-4 pb-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h2 className="section-title text-2xl md:text-3xl text-white">Топ букмекеров</h2>
-              <p className="text-slate-400 mt-1 text-sm">Лучшие букмекерские конторы на сегодня</p>
-            </div>
-            <Link href="/betting" className="flex items-center gap-1 text-sm text-purple-400 hover:text-purple-300 transition-colors">
-              Все букмекеры <ArrowRight size={14} />
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-            {topBetting.map((service, i) => (
-              <ServiceCard key={service.slug} service={service} rank={i + 1} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <div className="neon-divider my-4 max-w-7xl mx-auto px-4" />
 
       {/* Популярные игры */}
       <section className="py-8">
@@ -177,50 +151,12 @@ export default function HomePage() {
 
       <div className="neon-divider my-4 max-w-7xl mx-auto px-4" />
 
-      {/* Горячее предложение */}
-      <section className="py-8">
-        <div className="max-w-7xl mx-auto px-4">
-          <HotDealBanner
-            title="Эксклюзив: Fonbet — фрибет до 15 000 ₽ без депозита"
-            description="Только по промокоду BetRank. Зарегистрируйтесь и получите фрибет просто за верификацию."
-            accentColor="#f97316"
-            expiresAt={new Date(Date.now() + 47 * 3600000).toISOString()}
-            ctaText="Получить фрибет"
-            ctaHref="https://fonbet.ru"
-          />
-        </div>
-      </section>
-
-      <div className="neon-divider my-4 max-w-7xl mx-auto px-4" />
-
       {/* Рейтинг + изменения */}
       <section className="py-8">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-2">
-              <h2 className="section-title text-2xl text-white mb-4">Таблица изменений рейтинга</h2>
-              <RatingChangeTable />
-            </div>
-            <div>
-              <h2 className="section-title text-2xl text-white mb-4">Категории казино</h2>
-              <div className="space-y-2">
-                {[
-                  { href: '/casino/s-frispinami', label: '🎰 С фриспинами' },
-                  { href: '/casino/bez-depozita', label: '🎁 Без депозита' },
-                  { href: '/casino/s-bystrim-vivodom', label: '⚡ Быстрый вывод' },
-                  { href: '/casino/bez-verifikacii', label: '🎭 Без верификации' },
-                  { href: '/casino/s-licenziei', label: '🛡️ С лицензией ФНС' },
-                  { href: '/betting/s-fribet', label: '🎯 Букмекеры с фрибетом' },
-                  { href: '/betting/legalnye', label: '🇷🇺 Легальные букмекеры' },
-                  { href: '/promo', label: '🔥 Все промокоды' },
-                ].map(({ href, label }) => (
-                  <Link key={href} href={href}
-                    className="flex items-center justify-between px-4 py-2.5 rounded-xl border border-purple-900/20 text-slate-300 hover:text-white hover:border-purple-700/40 hover:bg-white/3 transition-all text-sm">
-                    {label} <ArrowRight size={13} className="text-slate-600" />
-                  </Link>
-                ))}
-              </div>
-            </div>
+          <div>
+            <h2 className="section-title text-2xl text-white mb-4">Таблица изменений рейтинга</h2>
+            <RatingChangeTable />
           </div>
         </div>
       </section>
@@ -236,12 +172,14 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { icon: '🔍', title: 'Независимые обзоры', desc: 'Не принимаем деньги за положительные отзывы. Каждый обзор — реальное тестирование.' },
-              { icon: '📊', title: '50+ параметров оценки', desc: 'Лицензии, выплаты, бонусы, поддержка, мобильность — всё учитывается в рейтинге.' },
-              { icon: '🔄', title: 'Ежемесячные обновления', desc: 'Рейтинги обновляются ежемесячно. Устаревшая информация немедленно помечается.' },
-            ].map(({ icon, title, desc }) => (
+              { Icon: Search, color: 'text-blue-400', bg: 'bg-blue-900/30 border-blue-700/30', title: 'Независимые обзоры', desc: 'Не принимаем деньги за положительные отзывы. Каждый обзор — реальное тестирование.' },
+              { Icon: BarChart2, color: 'text-purple-400', bg: 'bg-purple-900/30 border-purple-700/30', title: '50+ параметров оценки', desc: 'Лицензии, выплаты, бонусы, поддержка, мобильность — всё учитывается в рейтинге.' },
+              { Icon: RefreshCw, color: 'text-emerald-400', bg: 'bg-emerald-900/30 border-emerald-700/30', title: 'Ежемесячные обновления', desc: 'Рейтинги обновляются ежемесячно. Устаревшая информация немедленно помечается.' },
+            ].map(({ Icon, color, bg, title, desc }) => (
               <div key={title} className="service-card p-6 text-center">
-                <div className="text-4xl mb-4">{icon}</div>
+                <div className={`w-14 h-14 rounded-2xl border ${bg} flex items-center justify-center mx-auto mb-4`}>
+                  <Icon size={26} className={color} />
+                </div>
                 <h3 className="text-white font-700 text-lg mb-2" style={{fontFamily:'Exo 2, sans-serif'}}>{title}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">{desc}</p>
               </div>
@@ -250,8 +188,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Email подписка */}
-      <EmailSubscribe />
 
       {/* Bottom CTAs */}
       <section className="py-8 pb-16">

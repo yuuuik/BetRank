@@ -1,4 +1,4 @@
-import { Star, Zap, Smartphone, Clock, ExternalLink, Trophy } from 'lucide-react'
+import { Star, Zap, Smartphone, Clock, ExternalLink, Trophy, Sparkles, Coins } from 'lucide-react'
 import { Service } from '@/types'
 import { BrandLogo } from '@/components/ui/BrandLogo'
 
@@ -26,7 +26,7 @@ export function ServiceCard({ service, rank }: ServiceCardProps) {
           <BrandLogo
             website={service.website}
             name={service.name}
-            logo={service.logo}
+            logo={service.logo} logoUrl={service.logoUrl}
             accentColor={service.accentColor}
             size="md"
           />
@@ -81,12 +81,12 @@ export function ServiceCard({ service, rank }: ServiceCardProps) {
             )}
             {service.hasFreeSpins && (
               <span className="flex items-center gap-1 text-xs px-2.5 py-1 rounded-full bg-amber-900/30 text-amber-300 border border-amber-700/30">
-                ✨ Фриспины
+                <Sparkles size={10} /> Фриспины
               </span>
             )}
             {service.hasCashback && (
               <span className="flex items-center gap-1 text-xs px-2.5 py-1 rounded-full bg-rose-900/30 text-rose-300 border border-rose-700/30">
-                💰 Кэшбек
+                <Coins size={10} /> Кэшбек
               </span>
             )}
             <span className="text-xs px-2.5 py-1 rounded-full bg-slate-800/50 text-slate-400 border border-slate-700/30">
@@ -98,7 +98,7 @@ export function ServiceCard({ service, rank }: ServiceCardProps) {
 
       {/* Buttons */}
       <div className="flex gap-2 mt-4 pt-4 border-t border-purple-900/20">
-        <a href={service.website} target="_blank" rel="noopener noreferrer nofollow"
+        <a href={service.refUrl || service.website} target="_blank" rel="noopener noreferrer nofollow"
           className="btn-neon flex-1 justify-center text-sm py-2.5">
           Перейти на сайт <ExternalLink size={14} />
         </a>

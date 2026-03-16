@@ -7,17 +7,15 @@ const footerLinks = {
     { href: '/ratings', label: 'Топ рейтинг' },
     { href: '/bonuses', label: 'Бонусы' },
     { href: '/review/vavada', label: 'Vavada' },
-    { href: '/review/pin-up', label: 'Pin-Up Casino' },
-    { href: '/review/frank-casino', label: 'Frank Casino' },
-    { href: '/review/bitstarz', label: 'BitStarz' },
+    { href: '/review/1win', label: '1Win' },
+    { href: '/review/jozz', label: 'Jozz Casino' },
+    { href: '/review/rox', label: 'ROX Casino' },
   ],
-  'Букмекеры': [
-    { href: '/betting', label: 'Все букмекеры' },
-    { href: '/review/fonbet', label: 'Fonbet' },
-    { href: '/review/winline', label: 'Winline' },
-    { href: '/review/leon', label: 'Leon' },
-    { href: '/review/1xbet', label: '1xBet' },
-    { href: '/guides', label: 'Гайды по ставкам' },
+  'Бонусы': [
+    { href: '/bonuses/bez-depozita', label: 'Без депозита' },
+    { href: '/bonuses/frispiny', label: 'Фриспины' },
+    { href: '/bonuses/na-depozit', label: 'На депозит' },
+    { href: '/bonuses/keshbek', label: 'Кэшбек' },
   ],
   'Информация': [
     { href: '/reviews', label: 'Обзоры' },
@@ -43,7 +41,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-4 max-w-xs">
-              Независимый агрегатор с честными обзорами онлайн-казино и букмекерских контор. Мы помогаем найти лучшие бонусы и надёжные платформы.
+              Независимый агрегатор с честными обзорами онлайн-казино. Мы помогаем найти лучшие бонусы и надёжные платформы.
             </p>
             <div className="flex items-center gap-2 text-xs text-slate-500">
               <Shield size={14} className="text-purple-400" />

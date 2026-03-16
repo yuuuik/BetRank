@@ -30,7 +30,7 @@ export default function GamePage({ params }: Props) {
   if (!game) notFound()
 
   // Казино где доступна эта игра
-  const casinosForGame = services.filter(s => game.casinoSlugs.includes(s.slug))
+  const casinosForGame = services.filter(s => game.casinoSlugs.includes(s.slug)).sort((a, b) => b.rating - a.rating)
 
   // Другие игры того же провайдера
   const sameProvider = games.filter(g => g.providerSlug === game.providerSlug && g.slug !== game.slug)
@@ -143,7 +143,7 @@ export default function GamePage({ params }: Props) {
                   <div key={casino.slug} className="service-card p-4 flex items-center gap-4">
                     <span className="text-slate-600 font-700 text-sm w-6 text-center shrink-0">{i + 1}</span>
                     <BrandLogo website={casino.website} name={casino.name}
-                      logo={casino.logo} accentColor={casino.accentColor} size="md" />
+                      logo={casino.logo} logoUrl={casino.logoUrl} accentColor={casino.accentColor} size="md" />
                     <div className="flex-1 min-w-0">
                       <p className="text-white font-700 text-sm" style={{ fontFamily: 'Exo 2, sans-serif' }}>{casino.name}</p>
                       <div className="flex items-center gap-2 mt-0.5">
@@ -162,7 +162,7 @@ export default function GamePage({ params }: Props) {
                         className="text-xs py-2 px-3 rounded-xl border border-slate-700/40 text-slate-400 hover:text-white hover:border-purple-700/40 transition-all hidden sm:block">
                         Обзор
                       </Link>
-                      <a href={casino.website} target="_blank" rel="noopener noreferrer nofollow"
+                      <a href={casino.refUrl || casino.website} target="_blank" rel="noopener noreferrer nofollow"
                         className="btn-neon text-xs py-2 px-3">
                         Играть <ExternalLink size={11} />
                       </a>
@@ -269,9 +269,6 @@ export default function GamePage({ params }: Props) {
         </div>
       </div>
 
-      <div className="mt-10">
-        <EmailSubscribe compact />
-      </div>
     </div>
   )
 }
