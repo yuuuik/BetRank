@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
@@ -54,6 +55,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         }) }} />
       </head>
       <body className="noise-bg">
+        <Script id="yandex-metrika" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `
+          (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+          })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107271083','ym');
+          ym(107271083,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
+        ` }} />
+        <noscript><div><img src="https://mc.yandex.ru/watch/107271083" style={{position:'absolute',left:'-9999px'}} alt="" /></div></noscript>
         {/* Background glow orbs */}
         <div className="glow-orb w-96 h-96 top-0 left-1/4 bg-purple-900/20" style={{position:'fixed',top:'-100px',left:'20%'}} />
         <div className="glow-orb w-96 h-96 bg-blue-900/15" style={{position:'fixed',top:'50%',right:'-100px'}} />
