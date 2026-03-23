@@ -5,7 +5,7 @@ import { games } from '@/lib/games'
 import { providers } from '@/lib/providers'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://betrank.pro'
+  const base = 'https://betrank.vercel.app'
   const now = new Date()
 
   return [
