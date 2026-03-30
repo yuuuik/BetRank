@@ -61,8 +61,8 @@ export const services: Service[] = [
     description: 'FUGU Casino — динамичное онлайн-казино с щедрым бонусом 200% до 50 000 ₽ + 200 фриспинов. Слоты, live-казино, быстрые выплаты.',
     fullDescription: `FUGU Casino работает по лицензии Curaçao. Щедрый приветственный бонус 200% до 50 000 ₽ + 200 фриспинов за первый депозит. Тысячи слотов от ведущих провайдеров. Live-казино с реальными дилерами. Кэшбек до 20%, программа лояльности.`,
     rating: 4.41, userRating: 4.2, reviewCount: 7200, type: 'casino', founded: 2020,
-    license: 'Curaçao eGaming', website: 'https://fuguway63.com/cebe2a83e',
-    refUrl: 'https://fuguway63.com/cebe2a83e',
+    license: 'Curaçao eGaming', website: 'https://fuguway65.com/cebe2a83e',
+    refUrl: 'https://fuguway65.com/cebe2a83e',
     mainBonus: '200% до 50 000 ₽ + 200 FS',
     bonuses: [
       { type: 'deposit', title: 'Приветственный бонус 200%', description: '200% до 50 000 ₽ + 200 фриспинов', amount: '200% до 50 000 ₽', wagering: '40x', validDays: 30 },
