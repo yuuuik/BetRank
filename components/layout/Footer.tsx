@@ -22,6 +22,7 @@ const footerLinks = {
     { href: '/news', label: 'Новости' },
     { href: '/guides', label: 'Гайды' },
     { href: '/faq', label: 'FAQ' },
+    { href: '/sitemap', label: 'Карта сайта' },
   ],
 }
 

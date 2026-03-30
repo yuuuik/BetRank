@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/guides`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${base}/news`, lastModified: now, changeFrequency: 'daily', priority: 0.7 },
     { url: `${base}/faq`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/sitemap`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
     ...services.map(s => ({ url: `${base}/review/${s.slug}`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.8 })),
     ...casinoCategories.map(c => ({ url: `${base}/casino/${c.slug}`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.75 })),
 ...bonusCategories.map(c => ({ url: `${base}/bonuses/${c.slug}`, lastModified: now, changeFrequency: 'daily' as const, priority: 0.7 })),
