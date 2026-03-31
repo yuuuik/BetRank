@@ -270,11 +270,6 @@ interface GameLogoProps {
 }
 
 export function GameLogo({ slug, providerSlug, name, fallbackIcon, color, size = 'md' }: GameLogoProps) {
-  const key = `game:${slug}`
-  const [imgUrl, setImgUrl] = useState<string | null>(
-    imgCache[key] && imgCache[key] !== 'failed' ? imgCache[key] as string : null
-  )
-
   const dims: Record<string, number> = { xs: 28, sm: 40, md: 56, lg: 80 }
   const radii: Record<string, string> = { xs: '7px', sm: '10px', md: '14px', lg: '18px' }
   const textSz: Record<string, number>  = { xs: 9, sm: 12, md: 15, lg: 20 }
@@ -282,25 +277,28 @@ export function GameLogo({ slug, providerSlug, name, fallbackIcon, color, size =
   const br  = radii[size]
   const ts  = textSz[size]
 
-  useEffect(() => {
-    if (imgUrl) return
-    let dead = false
-    resolveGameImage(slug, providerSlug).then(url => { if (!dead) setImgUrl(url) })
-    return () => { dead = true }
-  }, [slug, imgUrl])
+  const snake = slug.replace(/-/g, '_')
+  const provFolder = SOFTSWISS_PROVIDER[providerSlug] ?? null
+  const candidates = [
+    GAME_IMAGES[slug],
+    provFolder ? `https://cdn2.softswiss.net/i/s3/${provFolder}/${snake}.jpg` : null,
+  ].filter(Boolean) as string[]
+
+  const [urlIdx, setUrlIdx] = useState(0)
+  const currentUrl = candidates[urlIdx] ?? null
 
   return (
     <div style={{
       width: box, height: box, minWidth: box, borderRadius: br, flexShrink: 0,
-      background: imgUrl ? '#0a0a18' : `linear-gradient(145deg, ${color}40, ${color}18)`,
+      background: currentUrl ? '#0a0a18' : `linear-gradient(145deg, ${color}40, ${color}18)`,
       border: `2px solid ${color}55`,
       boxShadow: `0 3px 14px ${color}30`,
       display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden',
     }}>
-      {imgUrl
-        ? <img src={imgUrl} alt={name} width={box} height={box}
+      {currentUrl
+        ? <img src={currentUrl} alt={name} width={box} height={box}
             style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-            onError={() => setImgUrl(null)} />
+            onError={() => setUrlIdx(i => i + 1)} />
         : <span style={{ fontSize: ts * 1.8, lineHeight: 1 }}>{fallbackIcon}</span>
       }
     </div>

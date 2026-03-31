@@ -31,10 +31,11 @@ const TOP_RU_SLUGS = [
 export default function GamesPage() {
   const popular = TOP_RU_SLUGS.map(slug => games.find(g => g.slug === slug)).filter(Boolean) as typeof games
   const newGames = games.filter(g => g.isNew)
+  const excluded = new Set([...TOP_RU_SLUGS, ...newGames.map(g => g.slug)])
   const byType = {
-    crash: games.filter(g => g.type === 'crash' || g.type === 'instant'),
-    slot: games.filter(g => g.type === 'slot'),
-    live: games.filter(g => g.type === 'live'),
+    crash: games.filter(g => (g.type === 'crash' || g.type === 'instant') && !excluded.has(g.slug)),
+    slot: games.filter(g => g.type === 'slot' && !excluded.has(g.slug)),
+    live: games.filter(g => g.type === 'live' && !excluded.has(g.slug)),
   }
 
   return (
