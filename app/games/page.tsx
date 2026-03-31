@@ -15,8 +15,21 @@ const typeColor: Record<string, string> = { slot: '#a855f7', crash: '#ef4444', l
 const volLabel: Record<string, string> = { low: 'Низкая', medium: 'Средняя', high: 'Высокая', 'very-high': 'Очень высокая' }
 const volColor: Record<string, string> = { low: '#4ade80', medium: '#f59e0b', high: '#f97316', 'very-high': '#ef4444' }
 
+const TOP_RU_SLUGS = [
+  'aviator',
+  'lucky-jet',
+  'gates-of-olympus',
+  'sweet-bonanza',
+  'mines',
+  'crazy-time',
+  'plinko',
+  'book-of-ra',
+  'the-dog-house',
+  'lightning-roulette',
+]
+
 export default function GamesPage() {
-  const popular = games.filter(g => g.popular)
+  const popular = TOP_RU_SLUGS.map(slug => games.find(g => g.slug === slug)).filter(Boolean) as typeof games
   const newGames = games.filter(g => g.isNew)
   const byType = {
     crash: games.filter(g => g.type === 'crash' || g.type === 'instant'),
