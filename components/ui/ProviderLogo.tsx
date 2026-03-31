@@ -153,12 +153,47 @@ async function resolveProviderLogo(slug: string): Promise<string | null> {
   return null
 }
 
-async function resolveGameImage(slug: string): Promise<string | null> {
+// Маппинг slug провайдера → папка на softswiss CDN
+const SOFTSWISS_PROVIDER: Record<string, string> = {
+  'spribe':          'spribe',
+  'evolution':       'evolution',
+  'novomatic':       'novomatic',
+  'netent':          'netent',
+  'bgaming':         'bgaming',
+  'playn-go':        'playngo',
+  'playngo':         'playngo',
+  'push-gaming':     'pushgaming',
+  'nolimit-city':    'nolimitcity',
+  'red-tiger':       'redtiger',
+  'yggdrasil':       'yggdrasil',
+  'hacksaw-gaming':  'hacksaw',
+  'relax-gaming':    'relaxgaming',
+  'big-time-gaming': 'bigtimegaming',
+  'wazdan':          'wazdan',
+  'elk':             'elk',
+  'quickspin':       'quickspin',
+  'endorphina':      'endorphina',
+  'smartsoft':       'smartsoft',
+  '1win-games':      'onlyplay',
+}
+
+async function resolveGameImage(slug: string, providerSlug?: string): Promise<string | null> {
   const key = `game:${slug}`
   if (imgCache[key] !== undefined) return imgCache[key] === 'failed' ? null : imgCache[key] as string
+
+  const snake = slug.replace(/-/g, '_')
+  const cdn = 'https://cdn2.softswiss.net/i/s3'
+
+  // Сначала — захардкоженный URL (может использовать внутренний ID провайдера)
   const staticUrl = GAME_IMAGES[slug]
-  if (!staticUrl) { imgCache[key] = 'failed'; return null }
-  try { await probeImg(staticUrl); imgCache[key] = staticUrl; return staticUrl } catch {}
+  // Затем — автоматически строим URL по паттерну провайдера
+  const provFolder = providerSlug ? SOFTSWISS_PROVIDER[providerSlug] : null
+  const autoUrl = provFolder ? `${cdn}/${provFolder}/${snake}.jpg` : null
+
+  const candidates = [staticUrl, autoUrl].filter(Boolean) as string[]
+  for (const url of candidates) {
+    try { await probeImg(url); imgCache[key] = url; return url } catch {}
+  }
   imgCache[key] = 'failed'
   return null
 }
@@ -250,7 +285,7 @@ export function GameLogo({ slug, providerSlug, name, fallbackIcon, color, size =
   useEffect(() => {
     if (imgUrl) return
     let dead = false
-    resolveGameImage(slug).then(url => { if (!dead) setImgUrl(url) })
+    resolveGameImage(slug, providerSlug).then(url => { if (!dead) setImgUrl(url) })
     return () => { dead = true }
   }, [slug, imgUrl])
 
