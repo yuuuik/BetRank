@@ -104,6 +104,7 @@ export const services: Service[] = [
       { name: 'Visa/Mastercard', icon: '💳', minDeposit: 500, maxWithdrawal: 200000, time: '1-3 дня' },
       { name: 'USDT', icon: '💱', minDeposit: 100, maxWithdrawal: 500000, time: '1-3 часа' },
       { name: 'СБП', icon: '🏦', minDeposit: 300, maxWithdrawal: 100000, time: '2-4 часа' },
+      { name: 'ЮMoney', icon: '💰', minDeposit: 100, maxWithdrawal: 100000, time: '1-24 часа' },
     ],
     screenshots: [],
     faq: [{ question: 'Как работает бонус 500%?', answer: '200% за первый депозит, 150% за второй, 100% за третий, 50% за четвёртый. Максимум 50 000 ₽ на каждый.' }],
@@ -132,6 +133,7 @@ export const services: Service[] = [
     paymentMethods: [
       { name: 'Visa/Mastercard', icon: '💳', minDeposit: 500, maxWithdrawal: 200000, time: '1-3 дня' },
       { name: 'Bitcoin', icon: '₿', minDeposit: 500, maxWithdrawal: 500000, time: '1-3 часа' },
+      { name: 'ЮMoney', icon: '💰', minDeposit: 100, maxWithdrawal: 100000, time: '1-24 часа' },
     ],
     screenshots: [], faq: [], reviews: [],
     featured: false, popular: true, badge: 'Без депозита', accentColor: '#7c3aed',
@@ -160,6 +162,7 @@ export const services: Service[] = [
       { name: 'Visa/Mastercard', icon: '💳', minDeposit: 500, maxWithdrawal: 200000, time: '1-3 дня' },
       { name: 'USDT', icon: '💱', minDeposit: 500, maxWithdrawal: 500000, time: '1-3 часа' },
       { name: 'СБП', icon: '🏦', minDeposit: 300, maxWithdrawal: 150000, time: '1-2 часа' },
+      { name: 'ЮMoney', icon: '💰', minDeposit: 100, maxWithdrawal: 100000, time: '1-24 часа' },
     ],
     screenshots: [], faq: [], reviews: [],
     featured: true, popular: true, badge: 'Без депозита', accentColor: '#dc2626',
@@ -186,6 +189,7 @@ export const services: Service[] = [
     paymentMethods: [
       { name: 'Visa/Mastercard', icon: '💳', minDeposit: 500, maxWithdrawal: 200000, time: '1-3 дня' },
       { name: 'Bitcoin', icon: '₿', minDeposit: 500, maxWithdrawal: 500000, time: '1-3 часа' },
+      { name: 'ЮMoney', icon: '💰', minDeposit: 100, maxWithdrawal: 100000, time: '1-24 часа' },
     ],
     screenshots: [], faq: [], reviews: [],
     featured: true, popular: true, badge: 'ТОП', accentColor: '#1d4ed8',
@@ -212,6 +216,7 @@ export const services: Service[] = [
     paymentMethods: [
       { name: 'Visa/Mastercard', icon: '💳', minDeposit: 500, maxWithdrawal: 200000, time: '1-3 дня' },
       { name: 'USDT', icon: '💱', minDeposit: 500, maxWithdrawal: 500000, time: '1-3 часа' },
+      { name: 'ЮMoney', icon: '💰', minDeposit: 100, maxWithdrawal: 100000, time: '1-24 часа' },
     ],
     screenshots: [], faq: [], reviews: [],
     featured: true, popular: true, badge: 'ТОП', accentColor: '#f43f5e',
