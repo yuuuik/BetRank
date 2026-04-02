@@ -31,6 +31,8 @@ export function GameLogo({ name, icon, fallbackIcon, color, size = 'md' }: GameL
   )
 }
 
+const PROVIDER_LOGO_URLS: Record<string, string> = {}
+
 // ProviderLogo — отдельный компонент для провайдера
 interface ProviderLogoProps {
   slug: string
