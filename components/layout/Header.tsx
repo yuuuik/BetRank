@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Menu, X, Search, Star, ChevronDown } from 'lucide-react'
 import { services } from '@/lib/data'
 import { providers } from '@/lib/providers'
+import { promoCodes } from '@/lib/promos'
 import { BrandLogo } from '@/components/ui/BrandLogo'
 import { ProviderLogo } from '@/components/ui/ProviderLogo'
 
@@ -77,6 +78,12 @@ const navLinks = [
 ]
 
 type NavLink = typeof navLinks[0]
+
+const topPromos = [...promoCodes]
+  .map(p => ({ promo: p, svc: services.find(s => s.slug === p.serviceSlug) }))
+  .filter(({ svc }) => !!svc)
+  .sort((a, b) => (b.svc?.rating ?? 0) - (a.svc?.rating ?? 0))
+  .slice(0, 4)
 
 export function Header() {
   const [open, setOpen] = useState(false)
@@ -153,7 +160,25 @@ export function Header() {
                     onMouseEnter={() => handleMouseEnter(link.label)}
                     onMouseLeave={handleMouseLeave}>
                     <div className="glass rounded-xl border border-purple-900/30 overflow-hidden shadow-2xl shadow-black/40">
-                      {link.label === 'Провайдеры' ? (
+                      {link.label === 'Промокоды' ? (
+                        <>
+                          {topPromos.map(({ promo, svc }) => (
+                            <Link key={promo.slug} href={`/promo/${promo.serviceSlug}`}
+                              onClick={() => setActiveDropdown(null)}
+                              className="flex items-center gap-3 px-4 py-2.5 hover:bg-purple-900/20 transition-all group">
+                              <BrandLogo website={svc!.website} name={svc!.name} logo={svc!.logo} logoUrl={svc!.logoUrl} accentColor={svc!.accentColor} size="sm" />
+                              <div className="flex-1 min-w-0">
+                                <p className="text-slate-300 text-sm group-hover:text-white transition-colors truncate">{promo.serviceName}</p>
+                                <p className="text-slate-600 text-xs truncate">{promo.amount}</p>
+                              </div>
+                            </Link>
+                          ))}
+                          <Link href="/promo" onClick={() => setActiveDropdown(null)}
+                            className="flex items-center justify-center px-4 py-2.5 text-xs text-purple-400 hover:text-purple-300 hover:bg-purple-900/20 transition-all border-t border-purple-900/20">
+                            Все промокоды →
+                          </Link>
+                        </>
+                      ) : link.label === 'Провайдеры' ? (
                         <>
                           {providers.filter(p => p.popular).slice(0, 3).map(p => (
                             <Link key={p.slug} href={`/providers/${p.slug}`}
@@ -177,7 +202,7 @@ export function Header() {
                             <Link key={child.href} href={child.href}
                               onClick={() => setActiveDropdown(null)}
                               className="flex items-center gap-3 px-4 py-2.5 hover:bg-purple-900/20 transition-all group">
-                              <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0 text-base"
+                              <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 text-xl"
                                 style={{ background: `${'color' in child && child.color ? child.color : '#a855f7'}20`, border: `1px solid ${'color' in child && child.color ? child.color : '#a855f7'}30` }}>
                                 {'icon' in child ? child.icon : ''}
                               </div>
@@ -323,7 +348,15 @@ export function Header() {
                   </button>
                   {mobileExpanded === link.label && (
                     <div className="ml-3 mt-1 space-y-0.5 border-l-2 border-purple-900/30 pl-3">
-                      {link.label === 'Провайдеры'
+                      {link.label === 'Промокоды'
+                        ? topPromos.map(({ promo }) => (
+                            <Link key={promo.slug} href={`/promo/${promo.serviceSlug}`}
+                              onClick={() => { setOpen(false); setMobileExpanded(null) }}
+                              className="block px-3 py-2 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+                              {promo.serviceName}
+                            </Link>
+                          ))
+                        : link.label === 'Провайдеры'
                         ? providers.filter(p => p.popular).slice(0, 3).map(p => (
                             <Link key={p.slug} href={`/providers/${p.slug}`}
                               onClick={() => { setOpen(false); setMobileExpanded(null) }}
