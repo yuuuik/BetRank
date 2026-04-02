@@ -10,29 +10,21 @@ export const metadata: Metadata = {
 }
 
 const RATING_CHANGES: Record<string, number> = {
-  '1xbet':         +1,  // был #2, поднялся на #1
-  '1win':          +1,  // поднялся
-  'betcity':       -2,
-  'olimpbet':       0,
-  'pari':          +2,
-  'melbet':        -1,
-  'marathon':      +1,
-  'liga-stavok':    0,
-  'tennisi':       -1,
-  'baltbet':       +1,
-  'zenit':         -1,
-  'bettery':       +2,
-  'sportbet':      -1,
-  '1xstavka':      +1,
-  'bet-m':         -1,
-  'vulkan-russia': +2,
-  'joycasino':      0,
-  'frank-casino':  +1,
-  'slotv':         -1,
-  'vavada':        +3,
-  'pin-up':        -1,
-  'cat-casino':     0,
-  'stake':         +2,
+  'joycasino':  +2,
+  'ramenbet':   +1,
+  'casino-x':   +1,
+  '1win':       +2,
+  'jozz':        0,
+  'booi':       +1,
+  'fugu':       +1,
+  'vavada':     +2,
+  'stake':       0,
+  'riobet':     -1,
+  'jet':        +1,
+  'rox':        -1,
+  'monro':       0,
+  'starda':     -1,
+  'martin':      0,
 }
 
 function getChange(slug: string): number {
