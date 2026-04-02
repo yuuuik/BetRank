@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { promoCodes } from '@/lib/promos'
+import { services } from '@/lib/data'
+import { BrandLogo } from '@/components/ui/BrandLogo'
 import { ChevronRight, Copy, Check, ExternalLink, Shield, Clock, Star, Gift, AlertCircle } from 'lucide-react'
 
 const typeLabels: Record<string, string> = {
@@ -33,6 +35,7 @@ function PromoContent({ casino }: { casino: string }) {
     setTimeout(() => setCopied(false), 2000)
   }
 
+  const svc = services.find(s => s.slug === casino)
   const typeColor = typeColors[promo.type] || '#a855f7'
   const typeLabel = typeLabels[promo.type] || promo.type
 
@@ -65,7 +68,13 @@ function PromoContent({ casino }: { casino: string }) {
       <div className="relative overflow-hidden rounded-2xl p-8 mb-8 border"
         style={{ background: `linear-gradient(135deg, ${typeColor}15, ${typeColor}05)`, borderColor: `${typeColor}25` }}>
         <div className="flex flex-col sm:flex-row sm:items-start gap-6">
-          <div className="text-5xl shrink-0">{promo.serviceLogo}</div>
+          <div className="shrink-0">
+            {svc ? (
+              <BrandLogo website={svc.website} name={svc.name} logo={svc.logo} logoUrl={svc.logoUrl} accentColor={svc.accentColor} size="lg" />
+            ) : (
+              <span className="text-5xl">{promo.serviceLogo}</span>
+            )}
+          </div>
           <div className="flex-1">
             <div className="flex flex-wrap items-center gap-2 mb-2">
               <span className="text-xs px-2.5 py-1 rounded-full font-600"
@@ -186,7 +195,7 @@ function PromoContent({ casino }: { casino: string }) {
         {promoCodes.filter(p => p.serviceSlug !== casino).slice(0, 6).map(p => (
           <Link key={p.slug} href={`/promo/${p.serviceSlug}`}
             className="service-card p-4 flex items-center gap-3 hover:scale-[1.01] transition-transform group">
-            <span className="text-2xl shrink-0">{p.serviceLogo}</span>
+            {(() => { const ps = services.find(s => s.slug === p.serviceSlug); return ps ? <BrandLogo website={ps.website} name={ps.name} logo={ps.logo} logoUrl={ps.logoUrl} accentColor={ps.accentColor} size="sm" /> : <span className="text-2xl shrink-0">{p.serviceLogo}</span> })()}
             <div className="flex-1 min-w-0">
               <p className="text-white text-sm font-600 truncate" style={{ fontFamily: 'Exo 2, sans-serif' }}>
                 Промокод {p.serviceName}

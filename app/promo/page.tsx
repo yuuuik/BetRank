@@ -1,6 +1,8 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { promoCodes } from '@/lib/promos'
+import { services } from '@/lib/data'
+import { BrandLogo } from '@/components/ui/BrandLogo'
 import { ChevronRight, Shield, Gift } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -25,8 +27,14 @@ const typeColors: Record<string, string> = {
 }
 
 export default function PromoIndexPage() {
-  const exclusivePromos = promoCodes.filter(p => p.exclusive)
-  const otherPromos = promoCodes.filter(p => !p.exclusive)
+  // Сортировка по рейтингу казино из data.ts
+  const sorted = [...promoCodes].sort((a, b) => {
+    const ra = services.find(s => s.slug === a.serviceSlug)?.rating ?? 0
+    const rb = services.find(s => s.slug === b.serviceSlug)?.rating ?? 0
+    return rb - ra
+  })
+  const exclusivePromos = sorted.filter(p => p.exclusive)
+  const otherPromos = sorted.filter(p => !p.exclusive)
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
@@ -65,11 +73,16 @@ export default function PromoIndexPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
         {exclusivePromos.map(promo => {
           const color = typeColors[promo.type] || '#a855f7'
+          const svc = services.find(s => s.slug === promo.serviceSlug)
           return (
             <Link key={promo.slug} href={`/promo/${promo.serviceSlug}`}
               className="service-card p-5 group hover:scale-[1.01] transition-transform flex flex-col">
               <div className="flex items-start gap-3 mb-4">
-                <span className="text-3xl shrink-0">{promo.serviceLogo}</span>
+                {svc ? (
+                  <BrandLogo website={svc.website} name={svc.name} logo={svc.logo} logoUrl={svc.logoUrl} accentColor={svc.accentColor} size="sm" />
+                ) : (
+                  <span className="text-3xl shrink-0">{promo.serviceLogo}</span>
+                )}
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-wrap gap-1.5 mb-1">
                     <span className="text-xs px-2 py-0.5 rounded-full font-600"
@@ -113,11 +126,16 @@ export default function PromoIndexPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {otherPromos.map(promo => {
               const color = typeColors[promo.type] || '#a855f7'
+              const svc = services.find(s => s.slug === promo.serviceSlug)
               return (
                 <Link key={promo.slug} href={`/promo/${promo.serviceSlug}`}
                   className="service-card p-5 group hover:scale-[1.01] transition-transform flex flex-col">
                   <div className="flex items-start gap-3 mb-4">
-                    <span className="text-3xl shrink-0">{promo.serviceLogo}</span>
+                    {svc ? (
+                      <BrandLogo website={svc.website} name={svc.name} logo={svc.logo} logoUrl={svc.logoUrl} accentColor={svc.accentColor} size="sm" />
+                    ) : (
+                      <span className="text-3xl shrink-0">{promo.serviceLogo}</span>
+                    )}
                     <div className="flex-1 min-w-0">
                       <span className="text-xs px-2 py-0.5 rounded-full font-600 mb-1 inline-block"
                         style={{ background: `${color}20`, color, border: `1px solid ${color}30` }}>
