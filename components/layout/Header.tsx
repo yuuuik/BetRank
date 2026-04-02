@@ -42,6 +42,18 @@ const navLinks = [
     children: [],
   },
   {
+    label: 'Оплата',
+    href: '/payment',
+    allHref: '/payment',
+    allLabel: 'Все способы',
+    children: [
+      { href: '/payment/sbp',      icon: '📱', label: 'СБП',              sub: 'Мгновенно · 0%',       color: '#38bdf8' },
+      { href: '/payment/karta',    icon: '💳', label: 'Банковская карта', sub: 'Visa / МИР',            color: '#a855f7' },
+      { href: '/payment/kripto',   icon: '₿',  label: 'Криптовалюта',    sub: 'BTC, USDT, ETH',        color: '#f59e0b' },
+      { href: '/payment/yuimoney', icon: '💰', label: 'ЮMoney',          sub: 'Электронный кошелёк',   color: '#8b5cf6' },
+    ],
+  },
+  {
     label: 'Полезное',
     children: [
       { href: '/reviews', icon: '⭐', label: 'Обзоры',    sub: 'Честные отзывы',   color: '#f59e0b' },
