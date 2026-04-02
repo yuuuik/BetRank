@@ -24,13 +24,6 @@ const recentNews = [
     sourceUrl: 'https://www.pragmaticplay.com/en/games/gates-of-olympus/',
   },
   {
-    title: 'Winline: фрибет 3 000 ₽ за первый депозит',
-    date: '2026-03-07',
-    tag: 'Бонус',
-    tagColor: '#4ade80',
-    sourceUrl: 'https://www.winline.ru/bonus/',
-  },
-  {
     title: 'Crazy Time от Evolution — топ live-игра года по версии GamblingInsider',
     date: '2026-03-05',
     tag: 'Рейтинг',
