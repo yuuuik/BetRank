@@ -30,7 +30,7 @@ export default function PaymentMethodPage({ params }: Props) {
       <div className="flex items-center gap-1.5 text-sm text-slate-500 mb-6 flex-wrap">
         <Link href="/" className="hover:text-slate-300">Главная</Link>
         <ChevronRight size={13} />
-        <span className="text-slate-500">Способы оплаты</span>
+        <Link href="/payment" className="hover:text-slate-300">Способы оплаты</Link>
         <ChevronRight size={13} />
         <span className="text-slate-300">{method.name}</span>
       </div>
