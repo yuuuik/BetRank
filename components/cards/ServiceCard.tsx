@@ -2,12 +2,20 @@ import { Star, Zap, Smartphone, Clock, ExternalLink, Trophy, Sparkles, Coins } f
 import { Service } from '@/types'
 import { BrandLogo } from '@/components/ui/BrandLogo'
 
+interface PaymentHighlight {
+  icon: string
+  name: string
+  speed: string
+  commission: string
+}
+
 interface ServiceCardProps {
   service: Service
   rank?: number
+  paymentHighlight?: PaymentHighlight
 }
 
-export function ServiceCard({ service, rank }: ServiceCardProps) {
+export function ServiceCard({ service, rank, paymentHighlight }: ServiceCardProps) {
   return (
     <div className="service-card p-5 group">
       <div className="flex items-start gap-4">
@@ -63,6 +71,22 @@ export function ServiceCard({ service, rank }: ServiceCardProps) {
             </p>
           </div>
 
+          {paymentHighlight && (
+            <div className="flex flex-wrap items-center gap-1.5 mt-3">
+              <span className="flex items-center gap-1 text-xs px-2.5 py-1 rounded-full bg-sky-900/30 text-sky-300 border border-sky-700/40 font-500">
+                {paymentHighlight.icon} {paymentHighlight.name} ✓
+              </span>
+              <span className="text-xs px-2 py-1 rounded-full bg-slate-800/50 text-slate-400 border border-slate-700/30">
+                {paymentHighlight.speed}
+              </span>
+              {paymentHighlight.commission === '0%' && (
+                <span className="text-xs px-2 py-1 rounded-full bg-green-900/30 text-green-400 border border-green-700/30">
+                  0% комиссия
+                </span>
+              )}
+            </div>
+          )}
+
           <div className="flex flex-wrap gap-1.5 mt-3">
             {service.hasLiveBetting && (
               <span className="flex items-center gap-1 text-xs px-2.5 py-1 rounded-full bg-blue-900/30 text-blue-300 border border-blue-700/30">
@@ -97,13 +121,13 @@ export function ServiceCard({ service, rank }: ServiceCardProps) {
       </div>
 
       {/* Buttons */}
-      <div className="flex gap-2 mt-4 pt-4 border-t border-purple-900/20">
+      <div className="flex flex-col sm:flex-row gap-2 mt-4 pt-4 border-t border-purple-900/20">
         <a href={service.refUrl || service.website} target="_blank" rel="noopener noreferrer nofollow"
-          className="btn-neon flex-1 justify-center text-sm py-2.5">
-          Перейти на сайт <ExternalLink size={14} />
+          className="btn-neon flex-1 justify-center text-sm py-3 font-700">
+          Получить бонус <ExternalLink size={14} />
         </a>
-        <a href={`/review/${service.slug}`} target="_blank" rel="noopener noreferrer"
-          className="flex-1 flex items-center justify-center gap-1 text-sm px-4 py-2.5 rounded-xl border border-purple-700/30 text-slate-300 hover:text-white hover:border-purple-500/50 hover:bg-purple-900/10 transition-all">
+        <a href={`/review/${service.slug}`}
+          className="flex items-center justify-center gap-1 text-sm px-4 py-3 rounded-xl border border-purple-700/30 text-slate-400 hover:text-white hover:border-purple-500/50 hover:bg-purple-900/10 transition-all sm:w-auto w-full">
           Обзор
         </a>
       </div>

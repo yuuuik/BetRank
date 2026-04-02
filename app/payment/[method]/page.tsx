@@ -62,18 +62,18 @@ export default function PaymentMethodPage({ params }: Props) {
         </div>
       </div>
 
-      <div className="glass rounded-2xl border border-purple-900/20 p-6 mb-10">
-        <p className="text-slate-400 text-sm leading-relaxed">{method.seoText}</p>
-      </div>
-
       <h2 className="section-title text-2xl text-white mb-6">
         {filtered.length > 0 ? `${filtered.length} казино с ${method.name}` : `Казино поддерживающие ${method.name}`}
       </h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-12">
         {(filtered.length > 0 ? filtered : services.sort((a,b) => b.rating - a.rating).slice(0, 6)).map((service, i) => (
-          <ServiceCard key={service.slug} service={service} rank={i + 1} />
+          <ServiceCard key={service.slug} service={service} rank={i + 1} paymentHighlight={{ icon: method.icon, name: method.name, speed: method.speed, commission: method.commission }} />
         ))}
+      </div>
+
+      <div className="glass rounded-2xl border border-purple-900/20 p-6 mb-10">
+        <p className="text-slate-400 text-sm leading-relaxed">{method.seoText}</p>
       </div>
 
       {/* Другие методы */}
