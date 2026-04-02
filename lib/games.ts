@@ -3939,7 +3939,7 @@ export const games: Game[] = [
   },
   // ── SMARTSOFT (ещё) ──
   {
-    slug: 'balloon',
+    slug: 'balloon-smartsoft',
     name: 'Balloon',
     provider: 'Smartsoft Gaming',
     providerSlug: 'smartsoft-gaming',
