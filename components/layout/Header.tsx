@@ -42,6 +42,18 @@ const navLinks = [
     children: [],
   },
   {
+    label: 'Промокоды',
+    href: '/promo',
+    allHref: '/promo',
+    allLabel: 'Все промокоды',
+    children: [
+      { href: '/promo/1win',      icon: '🏅', label: '1Win',         sub: 'до 200 000 ₽',        color: '#a855f7' },
+      { href: '/promo/vavada',    icon: '🌀', label: 'Vavada',       sub: '100 FS без депозита', color: '#7c3aed' },
+      { href: '/promo/ramenbet',  icon: '🍜', label: 'RamenBet',     sub: '150 FS без депозита', color: '#dc2626' },
+      { href: '/promo/joycasino', icon: '🎉', label: 'Joy Casino',   sub: '100% + 50 FS',        color: '#f43f5e' },
+    ],
+  },
+  {
     label: 'Оплата',
     href: '/payment',
     allHref: '/payment',

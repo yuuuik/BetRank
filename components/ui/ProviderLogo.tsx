@@ -1,29 +1,7 @@
 'use client'
 import { useState } from 'react'
 
-// Прямые URL логотипов провайдеров — без async probing
-const PROVIDER_LOGO_URLS: Record<string, string> = {
-  'pragmatic-play':  'https://img.logo.dev/pragmaticplay.com?token=pk_X2xMsTkTSPuWj4MJblmstw&size=128',
-  'evolution':       'https://img.logo.dev/evolution.com?token=pk_X2xMsTkTSPuWj4MJblmstw&size=128',
-  'spribe':          'https://img.logo.dev/spribe.co?token=pk_X2xMsTkTSPuWj4MJblmstw&size=128',
-  'novomatic':       'https://img.logo.dev/novomatic.com?token=pk_X2xMsTkTSPuWj4MJblmstw&size=128',
-  'netent':          'https://img.logo.dev/netent.com?token=pk_X2xMsTkTSPuWj4MJblmstw&size=128',
-  'hacksaw-gaming':  'https://img.logo.dev/hacksawgaming.com?token=pk_X2xMsTkTSPuWj4MJblmstw&size=128',
-  'bgaming':         'https://img.logo.dev/bgaming.com?token=pk_X2xMsTkTSPuWj4MJblmstw&size=128',
-  '1win-games':      'https://img.logo.dev/1win.com?token=pk_X2xMsTkTSPuWj4MJblmstw&size=128',
-  'playn-go':        'https://img.logo.dev/playngo.com?token=pk_X2xMsTkTSPuWj4MJblmstw&size=128',
-  'push-gaming':     'https://img.logo.dev/pushgaming.com?token=pk_X2xMsTkTSPuWj4MJblmstw&size=128',
-  'nolimit-city':    'https://img.logo.dev/nolimitcity.com?token=pk_X2xMsTkTSPuWj4MJblmstw&size=128',
-  'red-tiger':       'https://img.logo.dev/redtigergaming.com?token=pk_X2xMsTkTSPuWj4MJblmstw&size=128',
-  'yggdrasil':       'https://img.logo.dev/yggdrasilgaming.com?token=pk_X2xMsTkTSPuWj4MJblmstw&size=128',
-  'relax-gaming':    'https://img.logo.dev/relaxgaming.com?token=pk_X2xMsTkTSPuWj4MJblmstw&size=128',
-  'big-time-gaming': 'https://img.logo.dev/bigtimegaming.com?token=pk_X2xMsTkTSPuWj4MJblmstw&size=128',
-  'microgaming':     'https://img.logo.dev/microgaming.co.uk?token=pk_X2xMsTkTSPuWj4MJblmstw&size=128',
-  'wazdan':          'https://img.logo.dev/wazdan.com?token=pk_X2xMsTkTSPuWj4MJblmstw&size=128',
-  'elk':             'https://img.logo.dev/elkstudios.com?token=pk_X2xMsTkTSPuWj4MJblmstw&size=128',
-  'quickspin':       'https://img.logo.dev/quickspin.com?token=pk_X2xMsTkTSPuWj4MJblmstw&size=128',
-  'endorphina':      'https://img.logo.dev/endorphina.com?token=pk_X2xMsTkTSPuWj4MJblmstw&size=128',
-}
+const PROVIDER_LOGO_URLS: Record<string, string> = {}
 
 // ─── ProviderLogo ───────────────────────────────────────────────────────────
 interface ProviderLogoProps {
