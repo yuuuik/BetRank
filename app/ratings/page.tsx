@@ -12,12 +12,7 @@ export const metadata: Metadata = {
 const RATING_CHANGES: Record<string, number> = {
   '1xbet':         +1,  // был #2, поднялся на #1
   '1win':          +1,  // поднялся
-  'fonbet':         0,  // без изменений
-  'leon':          +2,  // хорошая динамика
-  'winline':       -1,  // немного опустился
-  'mostbet':        0,
   'betcity':       -2,
-  'betboom':       +1,
   'olimpbet':       0,
   'pari':          +2,
   'melbet':        -1,

@@ -10,13 +10,6 @@ const recentNews = [
     sourceUrl: 'https://rkn.gov.ru',
   },
   {
-    title: 'Fonbet — официальный партнёр РПЛ сезона 2025/26',
-    date: '2026-03-10',
-    tag: 'Букмекеры',
-    tagColor: '#38bdf8',
-    sourceUrl: 'https://www.fonbet.ru/sports/',
-  },
-  {
     title: 'Pragmatic Play: сетевые турниры по Gates of Olympus',
     date: '2026-03-08',
     tag: 'Игры',
