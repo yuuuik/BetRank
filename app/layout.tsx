@@ -77,6 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           ym(107271083,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
         ` }} />
         <noscript><div><img src="https://mc.yandex.ru/watch/107271083" style={{position:'absolute',left:'-9999px'}} alt="" /></div></noscript>
+        <Script id="socpublic-visit" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function() { var d = document, s = d.createElement('script'), g = 'getElementsByTagName'; s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true; s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://socpublic.com/themes/assets/global/scripts/visit_js.js'; var h=d[g]('body')[0]; h.appendChild(s); })();` }} />
         {/* Background glow orbs */}
         <div className="glow-orb w-96 h-96 top-0 left-1/4 bg-purple-900/20" style={{position:'fixed',top:'-100px',left:'20%'}} />
         <div className="glow-orb w-96 h-96 bg-blue-900/15" style={{position:'fixed',top:'50%',right:'-100px'}} />
