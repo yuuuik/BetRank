@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/'],
       },
     ],
-    sitemap: 'https://betrank.pro/sitemap.xml',
+    sitemap: 'https://betrank.vercel.app/sitemap.xml',
   }
 }

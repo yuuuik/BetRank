@@ -38,7 +38,7 @@ export default function HomePage() {
         numberOfItems: services.length,
         itemListElement: services.map((s, i) => ({
           '@type': 'ListItem', position: i + 1, name: s.name,
-          url: `https://betrank.pro/review/${s.slug}`,
+          url: `https://betrank.vercel.app/review/${s.slug}`,
         })),
       }) }} />
 

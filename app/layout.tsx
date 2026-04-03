@@ -20,7 +20,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://betrank.pro'),
+  metadataBase: new URL('https://betrank.vercel.app'),
   title: {
     default: 'BetRank — Рейтинг лучших онлайн-казино 2026',
     template: '%s | BetRank',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ru_RU',
-    url: 'https://betrank.pro',
+    url: 'https://betrank.vercel.app',
     siteName: 'BetRank',
     title: 'BetRank — Рейтинг лучших онлайн-казино',
     description: 'Независимый рейтинг онлайн-казино. Найдите лучшие бонусы и фриспины 2026.',
@@ -57,11 +57,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           '@context': 'https://schema.org',
           '@type': 'WebSite',
           name: 'BetRank',
-          url: 'https://betrank.pro',
+          url: 'https://betrank.vercel.app',
           description: 'Рейтинг лучших онлайн-казино',
           potentialAction: {
             '@type': 'SearchAction',
-            target: 'https://betrank.pro/reviews?q={search_term_string}',
+            target: 'https://betrank.vercel.app/reviews?q={search_term_string}',
             'query-input': 'required name=search_term_string',
           },
         }) }} />

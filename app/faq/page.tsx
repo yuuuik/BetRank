@@ -83,7 +83,7 @@ export default function FAQPage() {
 
       <div className="mt-8 p-6 service-card text-center">
         <p className="text-slate-400 mb-3">Не нашли ответ на свой вопрос?</p>
-        <Link href="mailto:support@betrank.pro" className="btn-neon">Написать нам</Link>
+        <Link href="mailto:support@betrank.vercel.app" className="btn-neon">Написать нам</Link>
       </div>
     </div>
   )
